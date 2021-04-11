@@ -9,7 +9,7 @@ exports.findAll = (req, res) => {
   const title = req.query.title;
 
   User.findAndCountAll({
-    limit: 10,
+    limit: 10000000,
     offset: 0,
     where: {}, // conditions
   })
@@ -22,6 +22,47 @@ exports.findAll = (req, res) => {
       });
     });
 };
+
+// Find a single with an id
+exports.findTecnico = (req, res) => {
+  const codigo = req.body.codigo;
+  console.log(req);
+  User.findAll({
+    where: {
+      codigo: codigo,
+      tipo: 'Tecnico',
+      status: 'activo'
+    },
+     attributes: ['nombre', 'apellido','id','email',  'codigo', 'telefono','imagen','direccion','tipo_tecnico',] })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving books."
+      });
+    });
+};
+
+exports.findCoordinadores = (req, res) => {
+  const title = req.query.title;
+
+  User.findAll({
+    where: {tipo:"Coordinador"}, // conditions
+    attributes: ['nombre', 'apellido','id', 'email',]
+  })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.send(500).send({
+        message: err.message || "Ocurrio un erro al acceder ."
+      });
+    });
+};
+
+
+
 
 exports.findOne = (req, res) => {
   const id = req.userId
@@ -46,18 +87,36 @@ exports.update = (req, res) => {
     body.imagen= `http://localhost:5000/public/${filename}`;
     console.log(body.imagen);
   }
+  if(req.files['firma']){
+    const { firma } = req.files['firma'][0]
+    body.firma= `http://localhost:5000/public/${firma}`;
+    console.log(body.imagen);
+  }
   if (req.codigo) {
     body.codigo= req.body.codigo;
   }
   if (req.entidad) {
     body.entidad= req.body.entidad;
   }
-
+  body.direccion= req.body.nombrdireccion;
+  body.status= req.body.status;
   body.nombre= req.body.nombre;
   body.apellido= req.body.apellido;
   body.sexo= req.body.sexo;
   body.telefono= req.body.telefono;
-
+  body.dependencia= req.dependencia;
+  if(req.body.tipo_tecnico){
+    body.tipo_tecnico= req.body.tipo_tecnico;
+  }
+  if(req.body.tipo_cuenta){
+    body.tipo_cuenta= req.body.tipo_cuenta;
+  }
+  if(req.body.nombre_cuenta){
+    body.nombre_cuenta= req.body.nombre_cuenta;
+  }
+  if(req.body.cuenta){
+    body.cuenta= req.body.cuenta;
+  }
 
   User.update(body,{
     where: { id: id }

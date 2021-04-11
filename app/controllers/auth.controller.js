@@ -15,7 +15,10 @@ exports.signup = (req, res) => {
     const { filename } = req.files['filename'][0]
     req.body.imagen= `http://localhost:5000/public/${filename}`
   }
-  
+  if(req.files['firma']){
+    const { filename } = req.files['firma'][0]
+    req.body.firma= `http://localhost:5000/public/${filename}`;
+  }
   User.create({
     username: req.body.username,
     email: req.body.email,
@@ -28,6 +31,12 @@ exports.signup = (req, res) => {
     telefono: req.body.telefono,
     imagen: req.body.imagen,
     tipo: req.body.tipo,
+    status: req.body.status,
+    direccion: req.body.direccion,
+    tipo_tecnico: req.body.tipo_tecnico,
+    tipo_cuenta: req.body.tipo_cuenta,
+    nombre_cuenta: req.body.nombre_cuenta,
+    cuenta: req.body.cuenta,
     password: bcrypt.hashSync(req.body.password, 8)
   })
     .then(user => {
@@ -52,6 +61,10 @@ exports.update = (req, res) => {
     const { filename } = req.files['filename'][0]
     body.imagen= `http://localhost:5000/public/${filename}`
   }
+  if(req.files['firma']){
+    const { filename } = req.files['firma'][0]
+    body.firma= `http://localhost:5000/public/${filename}`;
+  }
   body.nombre= req.body.nombre;
   body.apellido= req.body.apellido;
   body.sexo= req.body.sexo;
@@ -60,7 +73,21 @@ exports.update = (req, res) => {
   body.codigo= req.body.codigo;
   body.telefono= req.body.telefono;
   body.tipo= req.body.tipo;
-
+  body.direccion= req.body.direccion;
+  body.status= req.body.status;
+  body.dependencia= req.body.dependencia;
+  if(req.body.tipo_tecnico){
+    body.tipo_tecnico= req.body.tipo_tecnico;
+  }
+  if(req.body.tipo_cuenta){
+    body.tipo_cuenta= req.body.tipo_cuenta;
+  }
+  if(req.body.nombre_cuenta){
+    body.nombre_cuenta= req.body.nombre_cuenta;
+  }
+  if(req.body.cuenta){
+    body.cuenta= req.body.cuenta;
+  }
   User.update(body,{
     where: { id: id }
   })

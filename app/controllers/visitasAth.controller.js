@@ -1,5 +1,5 @@
 const db = require("../models");
-const Cargo = db.cargo;
+const Visita = db.visitasAth;
 const Op = db.Op;
 
 // Create and Save a new Book
@@ -18,7 +18,7 @@ exports.create = (req, res) => {
   };
 
   // Save Book in database
-  Cargo.create(book)
+  Visita.create(book)
     .then(data => {
       res.send(data);
     })
@@ -32,7 +32,7 @@ exports.create = (req, res) => {
 
 exports.findAll = (req, res) => {
 
-  Cargo.findAndCountAll({
+    Visita.findAndCountAll({
     limit: 3000000,
     offset: 0,
     where: {}, // conditions
@@ -54,7 +54,7 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  Cargo.findByPk(id)
+  Visita.findByPk(id)
     .then(data => {
       res.send(data);
     })
@@ -70,7 +70,7 @@ exports.update = (req, res) => {
   console.log(req)
   const id = req.body.id;
 
-  Cargo.update({
+  Visita.update({
     cargo: req.body.cargo,
     descripcion: req.body.descripcion
     },{
@@ -98,7 +98,7 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
   console.log(req)
   const id = req.body.id;
-  Cargo.destroy({
+  Visita.destroy({
     where: { id: id }
   })
     .then(num => {
@@ -121,7 +121,7 @@ exports.delete = (req, res) => {
 
 // Delete all Books from the database.
 exports.deleteAll = (req, res) => {
-  Book.destroy({
+    Visita.destroy({
     where: {},
     truncate: false
   })
@@ -137,7 +137,7 @@ exports.deleteAll = (req, res) => {
 
 // Find all published Books
 exports.findAllPublished = (req, res) => {
-  Book.findAll({ where: { published: true } })
+    Visita.findAll({ where: { published: true } })
     .then(data => {
       res.send(data);
     })

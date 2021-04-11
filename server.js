@@ -35,7 +35,19 @@ require("./app/routes/book.routes")(app);
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
 require("./app/routes/cargo.routes")(app);
+require("./app/routes/area.routes")(app);
+require("./app/routes/terceros.routes")(app);
+require("./app/routes/categoria.routes")(app);
+require("./app/routes/entidades.routes")(app);
+require("./app/routes/permisos.routes")(app);
+// Cajeros
 
+require("./app/routes/cajeros_ath.routes")(app);
+// fin Cajeros
+// Programacion
+
+require("./app/routes/programacion_ath.routes")(app);
+//  fin Programacion 
 // set port, listen for requests
 const PORT = config.PORT;
 app.listen(PORT, () => {

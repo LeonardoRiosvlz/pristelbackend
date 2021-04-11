@@ -4,9 +4,10 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
     {
       // Attributes
       id: {
-        type: DataTypes.UUID,
-        defaultValue: Sequelize.UUIDV4,
-        primaryKey: true
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true 
       },
       username: {
         type: DataTypes.STRING,
@@ -32,8 +33,32 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
         type: DataTypes.ENUM('Masculino', 'Femenino'),
         unique: false
       },
+      status: {
+        type: DataTypes.ENUM('activo', 'inactivo'),
+        unique: false
+      },
       entidad: {
         type: DataTypes.ENUM('Si','No'),
+        unique: false
+      },
+      tipo_tecnico: {
+        type: DataTypes.ENUM('Nomina', 'Contratista'),
+        unique: false
+      },
+      tipo_cuenta: {
+        type: DataTypes.ENUM('Ahorro', 'Corriente'),
+        unique: false
+      },
+      cedula: {
+        type: DataTypes.STRING,
+        unique: false
+      },
+      nombre_cuenta: {
+        type: DataTypes.STRING,
+        unique: false
+      },
+      cuenta: {
+        type: DataTypes.STRING,
         unique: false
       },
       cargo: {
@@ -43,12 +68,22 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
       tipo: {
         type: DataTypes.STRING
       },   
+      direccion: {
+        type: DataTypes.STRING,
+        unique: false
+      }, 
       imagen: {
         type: DataTypes.STRING,
         unique: false
-      },    
+      },   
       email: {
         type: DataTypes.STRING
+      },
+      firma: {
+        type: DataTypes.STRING
+      },
+      dependencia: {
+        type: DataTypes.STRING(5)
       },
       password: {
         type: DataTypes.STRING

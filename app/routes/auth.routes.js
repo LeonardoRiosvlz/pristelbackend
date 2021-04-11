@@ -2,7 +2,7 @@ const { verifySignUp } = require("../middlewares");
 const { authJwt } = require("../middlewares");
 const controller = require("../controllers/auth.controller");
 const upload = require('../libs/storage');
-const cpUpload = upload.fields([{ name: 'filename', maxCount: 1 }])
+const cpUpload = upload.fields([{ name: 'filename', maxCount: 1 },{ name: 'firma', maxCount: 1 }]) 
 
 module.exports = function(app) {
   app.use(function(req, res, next) {

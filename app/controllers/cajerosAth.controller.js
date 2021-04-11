@@ -1,24 +1,41 @@
 const db = require("../models");
-const Cargo = db.cargo;
+const CajerosAth = db.cajero_ath;
 const Op = db.Op;
 
 // Create and Save a new Book
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.cargo) {
+  if (!req.body.codigo) {
     res.status(400).send({
       message: "Content can not be empty!"
     });
     return;
   }
   // Create a Book
-  const book = {
-    cargo: req.body.cargo,
-    descripcion: req.body.descripcion,
+  const body = {
+    tipo: req.body.tipo,
+    codigo: req.body.codigo,
+    tipologia: req.body.tipologia,
+    terminal: req.body.terminal,
+    direccion: req.body.direccion,
+    ciudad: req.body.ciudad,
+    regional: req.body.regional,
+    site: req.body.site,
+    comparte_site: req.body.comparte_site,
+    cumpleanos: req.body.cumpleanos,
+    administrado: req.body.administrado,
+    tipo_site: req.body.tipo_site,
+    cierre_nocturno: req.body.cierre_nocturno,
+    apertura: req.body.apertura,
+    cierre: req.body.cierre,
+    aseo: req.body.aseo,
+    dias_respuesta: req.body.dias_respuesta,
+    id_entidad: req.body.id_entidad,
+
   };
 
   // Save Book in database
-  Cargo.create(book)
+  CajerosAth.create(body)
     .then(data => {
       res.send(data);
     })
@@ -32,7 +49,7 @@ exports.create = (req, res) => {
 
 exports.findAll = (req, res) => {
 
-  Cargo.findAndCountAll({
+    CajerosAth.findAndCountAll({
     limit: 3000000,
     offset: 0,
     where: {}, // conditions
@@ -51,16 +68,15 @@ exports.findAll = (req, res) => {
 };
 
 // Find a single with an id
-exports.findOne = (req, res) => {
-  const id = req.params.id;
-
-  Cargo.findByPk(id)
+exports.find = (req, res) => {
+  const codigo = req.body.codigo;
+  CajerosAth.findAll({ where: { codigo: codigo } })
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
-        message: `erro al editar el cargo= ${id}`
+        message: err.message || "Some error occurred while retrieving books."
       });
     });
 };
@@ -69,27 +85,42 @@ exports.findOne = (req, res) => {
 exports.update = (req, res) => {
   console.log(req)
   const id = req.body.id;
-
-  Cargo.update({
-    cargo: req.body.cargo,
-    descripcion: req.body.descripcion
+  CajerosAth.update({
+    tipo: req.body.tipo,
+    codigo: req.body.codigo,
+    tipologia: req.body.tipologia,
+    terminal: req.body.terminal,
+    direccion: req.body.direccion,
+    ciudad: req.body.ciudad,
+    regional: req.body.regional,
+    site: req.body.site,
+    comparte_site: req.body.comparte_site,
+    cumpleanos: req.body.cumpleanos,
+    administrado: req.body.administrado,
+    tipo_site: req.body.tipo_site,
+    cierre_nocturno: req.body.cierre_nocturno,
+    apertura: req.body.apertura,
+    cierre: req.body.cierre,
+    aseo: req.body.aseo,
+    dias_respuesta: req.body.dias_respuesta,
+    id_entidad: req.body.id_entidad,
     },{
     where: { id: id }
   })
     .then(num => {
       if (num == 1) {
         res.send({
-          message: "editado satisfactoriamente."
+          message: "editado satisfactoriamente :D."
         });
       } else {
         res.send({
-          message: `No puede editar el coargo con el  el =${id}. Tal vez el cargo no existe o la peticion es vacia!`
+          message: `No puede editar el cajero con el  el =${id}. Tal vez el cajero no existe o la peticion es vacia!`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error al intentar editar el cargo con el id=" + id
+        message: "Error al intentar editar el cajero con el id=" + id
       });
     });
 };
@@ -98,7 +129,7 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
   console.log(req)
   const id = req.body.id;
-  Cargo.destroy({
+  CajerosAth.destroy({
     where: { id: id }
   })
     .then(num => {
@@ -119,25 +150,11 @@ exports.delete = (req, res) => {
     });
 };
 
-// Delete all Books from the database.
-exports.deleteAll = (req, res) => {
-  Book.destroy({
-    where: {},
-    truncate: false
-  })
-    .then(nums => {
-      res.send({ message: `${nums} Books were deleted successfully!` });
-    })
-    .catch(err => {
-      res.status(500).send({
-        message: err.message || "Some error occurred while removing all books."
-      });
-    });
-};
+
 
 // Find all published Books
 exports.findAllPublished = (req, res) => {
-  Book.findAll({ where: { published: true } })
+    CajerosAth.findAll({ where: { published: true } })
     .then(data => {
       res.send(data);
     })

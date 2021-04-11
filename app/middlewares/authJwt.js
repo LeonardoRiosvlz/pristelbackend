@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const config = require("../config/config.js");
 const db = require("../models");
 const User = db.user;
-
+const Permiso = db.permiso;
 verifyToken = (req, res, next) => {
   let token = req.headers.authorization.split(" ")[1];
 
@@ -24,6 +24,25 @@ verifyToken = (req, res, next) => {
     next();
   });
 };
+
+isCoordinadorPrivilegiado = (req, res, next) => {
+  Permiso.findAndCountAll({
+    where: { 
+      uid: req.userId,
+      eid: req.body.eid
+     }
+  }).then(data => {
+      if (data.count> 0) {
+        next();
+        return;
+      } else {
+        return res.status(401).send({
+          message: "No tienes permiso para esto"
+        });
+      }
+    })
+};
+
 
 isAdmin = (req, res, next) => {
   User.findByPk(req.userId).then(user => {
@@ -97,7 +116,8 @@ const authJwt = {
   isAdmin: isAdmin,
   isTecnico: isTecnico,
   isModerator: isModerator,
-  isModeratorOrAdmin: isModeratorOrAdmin
+  isModeratorOrAdmin: isModeratorOrAdmin,
+  isCoordinadorPrivilegiado: isCoordinadorPrivilegiado
 };
 
 module.exports = authJwt;

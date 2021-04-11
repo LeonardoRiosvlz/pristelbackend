@@ -1,14 +1,13 @@
 module.exports = (sequelize, Sequelize, DataTypes) => {
-  const Role = sequelize.define(
-    "role", // Model name
+  const Permiso = sequelize.define(
+    "permiso", // Model name
     {
       // Attributes
       id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
         primaryKey: true
-      },
-      name: {
-        type: DataTypes.STRING
       }
     },
     {
@@ -19,6 +18,8 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
       updatedAt: "updated_at"
     }
   );
-
-  return Role;
+  
+  
+  
+  return Permiso;
 };

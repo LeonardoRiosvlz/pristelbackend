@@ -1,30 +1,31 @@
 const db = require("../models");
-const Cargo = db.cargo;
+const Area = db.area;
 const Op = db.Op;
 
 // Create and Save a new Book
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.cargo) {
+  if (!req.body.nombre) {
     res.status(400).send({
-      message: "Content can not be empty!"
+      message: "Nombre no puede ser nulo!"
     });
     return;
   }
   // Create a Book
-  const book = {
-    cargo: req.body.cargo,
+  const body = {
+    nombre: req.body.nombre,
     descripcion: req.body.descripcion,
+    telefono: req.body.telefono,
   };
 
   // Save Book in database
-  Cargo.create(book)
+  Area.create(body)
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
-        message: err.message || "Some error occurred while creating the Book."
+        message: err.message || "Eror al intentar agregar la sede."
       });
     });
 };
@@ -32,7 +33,7 @@ exports.create = (req, res) => {
 
 exports.findAll = (req, res) => {
 
-  Cargo.findAndCountAll({
+  Area.findAndCountAll({
     limit: 3000000,
     offset: 0,
     where: {}, // conditions
@@ -54,7 +55,7 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  Cargo.findByPk(id)
+  Area.findByPk(id)
     .then(data => {
       res.send(data);
     })
@@ -70,9 +71,12 @@ exports.update = (req, res) => {
   console.log(req)
   const id = req.body.id;
 
-  Cargo.update({
-    cargo: req.body.cargo,
-    descripcion: req.body.descripcion
+  Area.update({
+    nombre: req.body.nombre,
+    direccion: req.body.direccion,
+    telefono: req.body.telefono,
+    ciudad: req.body.ciudad,
+    departamento: req.body.departamento,
     },{
     where: { id: id }
   })
@@ -98,30 +102,30 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
   console.log(req)
   const id = req.body.id;
-  Cargo.destroy({
+  Sede.destroy({
     where: { id: id }
   })
     .then(num => {
       if (num == 1) {
         res.send({
-          message: "Cargo borrado satisfactoriamente!"
+          message: "Sede borrada satisfactoriamente!"
         });
       } else {
         res.send({
-          message: `No se pudo borrar el cargo con el id=${id}. Tal vez el cargo no existe!`
+          message: `No se pudo borrar la sede con el id=${id}. Tal vez la sede no existe!`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "No se pudo borrar el cargo con el id=" + id
+        message: "No se pudo borrar la sede con el id=" + id
       });
     });
 };
 
 // Delete all Books from the database.
 exports.deleteAll = (req, res) => {
-  Book.destroy({
+  Area.destroy({
     where: {},
     truncate: false
   })
@@ -137,7 +141,7 @@ exports.deleteAll = (req, res) => {
 
 // Find all published Books
 exports.findAllPublished = (req, res) => {
-  Book.findAll({ where: { published: true } })
+  Area.findAll({ where: { published: true } })
     .then(data => {
       res.send(data);
     })

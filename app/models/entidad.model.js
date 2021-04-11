@@ -21,8 +21,8 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
         telefono: {
             type: DataTypes.STRING(60)
         },
-        Empresa: {
-            type: DataTypes.STRING
+        empresa: {
+            type: DataTypes.STRING(25)
         },
         pagina: {
             type: DataTypes.STRING(60)
@@ -35,9 +35,6 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
         },
         direccion: {
             type: DataTypes.STRING(60)
-        },
-        coordinadores: {
-            type: DataTypes.JSON
         },
         categorias: {
             type: DataTypes.JSON
@@ -53,7 +50,10 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
             type: DataTypes.STRING(60)
         },
         aviso: {
-            type: DataTypes.STRING(60)
+            type: DataTypes.STRING(25)
+        },
+        imagen: {
+          type: DataTypes.STRING(120)
         },
         created_at: {
           allowNull: false,

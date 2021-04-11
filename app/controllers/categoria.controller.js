@@ -1,24 +1,24 @@
 const db = require("../models");
-const Cargo = db.cargo;
+const Categoria = db.categoria;
 const Op = db.Op;
 
 // Create and Save a new Book
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.cargo) {
+  if (!req.body.categoria) {
     res.status(400).send({
       message: "Content can not be empty!"
     });
     return;
   }
-  // Create a Book
-  const book = {
-    cargo: req.body.cargo,
+  // Create 
+  const categoria = {
+    categoria: req.body.categoria,
     descripcion: req.body.descripcion,
   };
 
-  // Save Book in database
-  Cargo.create(book)
+  // Save in database
+  Categoria.create(categoria)
     .then(data => {
       res.send(data);
     })
@@ -32,7 +32,7 @@ exports.create = (req, res) => {
 
 exports.findAll = (req, res) => {
 
-  Cargo.findAndCountAll({
+    Categoria.findAndCountAll({
     limit: 3000000,
     offset: 0,
     where: {}, // conditions
@@ -54,7 +54,7 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  Cargo.findByPk(id)
+  Categoria.findByPk(id)
     .then(data => {
       res.send(data);
     })
@@ -70,11 +70,14 @@ exports.update = (req, res) => {
   console.log(req)
   const id = req.body.id;
 
-  Cargo.update({
-    cargo: req.body.cargo,
+  Categoria.update({
+    categoria: req.body.categoria,
     descripcion: req.body.descripcion
     },{
-    where: { id: id }
+    where: { id: id },
+    order: [
+      ['id', 'DESC'],
+    ],
   })
     .then(num => {
       if (num == 1) {
@@ -98,7 +101,7 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
   console.log(req)
   const id = req.body.id;
-  Cargo.destroy({
+  Categoria.destroy({
     where: { id: id }
   })
     .then(num => {
@@ -115,35 +118,6 @@ exports.delete = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message: "No se pudo borrar el cargo con el id=" + id
-      });
-    });
-};
-
-// Delete all Books from the database.
-exports.deleteAll = (req, res) => {
-  Book.destroy({
-    where: {},
-    truncate: false
-  })
-    .then(nums => {
-      res.send({ message: `${nums} Books were deleted successfully!` });
-    })
-    .catch(err => {
-      res.status(500).send({
-        message: err.message || "Some error occurred while removing all books."
-      });
-    });
-};
-
-// Find all published Books
-exports.findAllPublished = (req, res) => {
-  Book.findAll({ where: { published: true } })
-    .then(data => {
-      res.send(data);
-    })
-    .catch(err => {
-      res.status(500).send({
-        message: err.message || "Some error occurred while retrieving books."
       });
     });
 };

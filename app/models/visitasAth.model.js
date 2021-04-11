@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize, DataTypes) => {
-    const Oficina = sequelize.define(
-      "oficina", // Model name
+    const VisitasAth = sequelize.define(
+      "visitas_ath", // Model name
       {
         // Model attributes
         id: {
@@ -9,26 +9,20 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
           autoIncrement: true,
           primaryKey: true
         },
-        nombre_oficina: {
-          type: DataTypes.STRING(35)
+        tipo: {
+            type: DataTypes.ENUM('Realizada','Fallida'),
+            defaultValue: 'Realizada',
+            unique: false
         },
-        ciudad_oficina: {
-          type: DataTypes.STRING(25)
+        fecha: {
+            allowNull: true,
+            type: DataTypes.DATEONLY
+        }, 
+        descripcion: {
+          type: DataTypes.TEXT 
         },
-        departamento_oficina: {
-            type: DataTypes.STRING(35)
-        },
-        dep_oficina: {
-            type: DataTypes.STRING(5)
-        },
-        codigo_oficina: {
-            type: DataTypes.STRING(15)
-        },
-        region_oficina: {
-            type: DataTypes.STRING(5)
-        },
-        direccion_oficina: {
-            type: DataTypes.STRING(5)
+        evidencias: {
+            type: DataTypes.JSON
         },
         created_at: {
           allowNull: false,
@@ -48,6 +42,6 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
       }
     );
   
-    return Oficina;
+    return VisitasAth;
   };
   

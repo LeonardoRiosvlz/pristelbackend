@@ -1,7 +1,7 @@
 const { authJwt } = require("../middlewares");
 const controller = require("../controllers/user.controller");
 const upload = require('../libs/storage');
-const cpUpload = upload.fields([{ name: 'filename', maxCount: 1 }])
+const cpUpload = upload.fields([{ name: 'filename', maxCount: 1 },{ name: 'firma', maxCount: 1 }])
 
 module.exports = function(app) {
   app.use(function(req, res, next) {
@@ -15,8 +15,12 @@ module.exports = function(app) {
 
   // Retrieve all Books
   app.get("/user/all",[authJwt.verifyToken], controller.findAll);
+
+  app.get("/user/coordinadores",[authJwt.verifyToken], controller.findCoordinadores);
   
   app.get("/user/pefil",[authJwt.verifyToken], controller.findOne);
+
+  app.post("/api/user/tecnico",[cpUpload,authJwt.verifyToken], controller.findTecnico);
 
   app.put("/user/pefil",[cpUpload ,authJwt.verifyToken], controller.update);
   
