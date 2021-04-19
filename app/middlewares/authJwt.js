@@ -3,6 +3,7 @@ const config = require("../config/config.js");
 const db = require("../models");
 const User = db.user;
 const Permiso = db.permiso;
+const Conversacion = db.conversacion;
 verifyToken = (req, res, next) => {
   let token = req.headers.authorization.split(" ")[1];
 
@@ -111,12 +112,34 @@ isModeratorOrAdmin = (req, res, next) => {
   });
 };
 
+isAdminSala = (req, res, next) => {
+  console.log(req.body.id_conversacion); 
+ Conversacion.findAndCountAll({
+    where: {
+      uid: req.userId,
+      id:req.body.id_conversacion
+    },
+    offset: 10,
+    limit: 1
+  }).then(data => {
+    if (data.count<1) {
+      res.status(403).send({
+        message: "No eres dueño de esta sala!"
+      });
+    }else{
+      next();
+      return;
+    }
+  })
+};
+
 const authJwt = {
   verifyToken: verifyToken,
   isAdmin: isAdmin,
   isTecnico: isTecnico,
   isModerator: isModerator,
   isModeratorOrAdmin: isModeratorOrAdmin,
+  isAdminSala: isAdminSala,
   isCoordinadorPrivilegiado: isCoordinadorPrivilegiado
 };
 

@@ -49,6 +49,10 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
         type: DataTypes.ENUM('Ahorro', 'Corriente'),
         unique: false
       },
+      canal: {
+        type: DataTypes.STRING(25),
+        unique: false
+      },
       cedula: {
         type: DataTypes.STRING,
         unique: false

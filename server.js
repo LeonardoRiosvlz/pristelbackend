@@ -1,9 +1,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const path = require("path");
 const config = require("./app/config/config.js");
 
 const app = express();
+const server = require('http').Server(app);
 
 const corsOptions = {
   origin: "http://localhost:8080"
@@ -11,11 +13,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.urlencoded({extended: true})); 
-  
-// parse requests of content-type - application/json
-//app.use(bodyParser.json());
-// parse requests of content-type - application/x-www-form-urlencoded
-//app.use(bodyParser.urlencoded({ extended: true }));
 
 // database
 const db = require("./app/models");
@@ -24,10 +21,6 @@ db.sequelize.sync().then(() => {
  //initial(); // Just use it in development, at the first time execution!. Delete it in production
 });
 
-// simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Hi there, welcome to this tutorial." });
-});
 
 // api routes
 app.use('/public',express.static(`${__dirname}/app/storage/imgs`));
@@ -40,6 +33,8 @@ require("./app/routes/terceros.routes")(app);
 require("./app/routes/categoria.routes")(app);
 require("./app/routes/entidades.routes")(app);
 require("./app/routes/permisos.routes")(app);
+require("./app/routes/notificacion.routes")(app);
+require("./app/routes/chat.routes")(app);
 // Cajeros
 
 require("./app/routes/cajeros_ath.routes")(app);
@@ -49,25 +44,32 @@ require("./app/routes/cajeros_ath.routes")(app);
 require("./app/routes/programacion_ath.routes")(app);
 //  fin Programacion 
 // set port, listen for requests
+
+ 
+// Middleware para Vue.js router modo history
+const history = require('connect-history-api-fallback');
+app.use(history());
+app.use(express.static(path.join(__dirname, 'app/public')));
+
+
 const PORT = config.PORT;
-app.listen(PORT, () => {
+const servidor =app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-// Just use it in development, at the first time execution!. Delete it in production
-function initial() {
-  Role.create({
-    id: 1,
-    name: "tecnico"
-  });
+const io = require('socket.io')(servidor);
+global.io = io; //added
+io.on('connection', function(socket) {
+ 
+    socket.on('servidor', function(data) {
+  
+        //io.emit('MESSAGE', data)
+        io.to(data.user).emit('cliente', data);
+    });
+});
 
-  Role.create({
-    id: 2,
-    name: "coordinador"
-  });
+module.exports = {
 
-  Role.create({
-    id: 3,
-    name: "admin"
-  });
+    servidor
+
 }

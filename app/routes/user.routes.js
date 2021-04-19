@@ -16,6 +16,8 @@ module.exports = function(app) {
   // Retrieve all Books
   app.get("/user/all",[authJwt.verifyToken], controller.findAll);
 
+  app.get("/api/user/contactos",[authJwt.verifyToken], controller.findAllContacto);
+
   app.get("/user/coordinadores",[authJwt.verifyToken], controller.findCoordinadores);
   
   app.get("/user/pefil",[authJwt.verifyToken], controller.findOne);
@@ -23,6 +25,8 @@ module.exports = function(app) {
   app.post("/api/user/tecnico",[cpUpload,authJwt.verifyToken], controller.findTecnico);
 
   app.put("/user/pefil",[cpUpload ,authJwt.verifyToken], controller.update);
+
+  app.put("/api/user/canal",[cpUpload ,authJwt.verifyToken], controller.updateCanal);
   
   app.get("/api/test/all", controller.allAccess);
 

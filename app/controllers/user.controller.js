@@ -22,7 +22,25 @@ exports.findAll = (req, res) => {
       });
     });
 };
+// Retrieve all Books from the database.
+exports.findAllContacto = (req, res) => {
+  const title = req.query.title;
 
+  User.findAndCountAll({
+    limit: 10000000,
+    offset: 0,
+    attributes: ['id', 'nombre', 'apellido', 'cargo', 'telefono'],
+    where: {}, // conditions
+  })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.send(500).send({
+        message: err.message || "Ocurrio un erro al acceder ."
+      });
+    });
+};
 // Find a single with an id
 exports.findTecnico = (req, res) => {
   const codigo = req.body.codigo;
@@ -77,6 +95,36 @@ exports.findOne = (req, res) => {
       });
     });
 };
+
+
+// Update a Book by the id in the request
+exports.updateCanal = (req, res) => {
+
+  const id = req.userId;
+  User.update({
+    canal: req.body.canal,
+    },{
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "editado satisfactoriamente."
+        });
+      } else {
+        res.send({
+          message: `No puede editar el canal con el id =${id}. Tal vez el cargo no existe o la peticion es vacia!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error al intentar editar el canal con el id=" + id
+      });
+    });
+};
+
+
 
 // Update a Book by the id in the request
 exports.update = (req, res) => {
@@ -171,3 +219,4 @@ exports.adminBoard = (req, res) => {
 exports.moderatorBoard = (req, res) => {
   res.status(200).send("Moderator Content.");
 };
+ 

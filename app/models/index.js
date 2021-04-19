@@ -38,6 +38,12 @@ db.programacion_ath = require("./programacion_ath.model.js")(sequelize, Sequeliz
 db.area = require("./area.model.js")(sequelize, Sequelize, DataTypes);
 db.visitasAth = require("./visitasAth.model.js")(sequelize, Sequelize, DataTypes);
 db.gestionAth = require("./gestionAth.model.js")(sequelize, Sequelize, DataTypes);
+db.notificacion = require("./notificacion.model.js")(sequelize, Sequelize, DataTypes);
+db.conversacion = require("./conversacion.model.js")(sequelize, Sequelize, DataTypes);
+db.suscripciones = require("./suscripciones.model.js")(sequelize, Sequelize, DataTypes);
+db.mensajes = require("./mensajes.model.js")(sequelize, Sequelize, DataTypes);
+
+
 
 db.user.hasMany(db.permiso, { foreignKey: 'uid' });
 db.entidad.hasMany(db.permiso, { foreignKey: 'eid' });
@@ -59,8 +65,22 @@ db.permiso.belongsTo(db.entidad, { foreignKey: 'eid' });
 
 
 
+db.notificacion.belongsTo(db.user, { foreignKey: 'uid' });
+db.user.hasMany(db.notificacion, { foreignKey: 'uid' });
 
+///chat///
+db.conversacion.hasMany(db.suscripciones, { foreignKey: 'id_conversacion' }); 
+db.user.hasMany(db.conversacion, { foreignKey: 'uid' }); 
+db.suscripciones.belongsTo(db.conversacion, { foreignKey: 'id_conversacion' }); 
+db.user.hasMany(db.suscripciones, { foreignKey: 'uid' }); 
+db.suscripciones.belongsTo(db.user, { foreignKey: 'uid' }); 
 
+db.conversacion.hasMany(db.mensajes, { foreignKey: 'id_conversacion' }); 
+db.conversacion.belongsTo(db.user, { foreignKey: 'uid' }); 
+db.user.hasMany(db.mensajes, { foreignKey: 'uid' });
+db.mensajes.belongsTo(db.user, { foreignKey: 'uid' }); 
+db.mensajes.belongsTo(db.conversacion, { foreignKey: 'id_conversacion' }); 
+///chat///
 
 
 

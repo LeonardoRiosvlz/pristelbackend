@@ -112,7 +112,7 @@ exports.update = (req, res) => {
 exports.signin = (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
-  console.log(email);
+
   User.findOne({
     where: {
       email: email
@@ -134,7 +134,7 @@ exports.signin = (req, res) => {
       }
 
       let token = jwt.sign({ id: user.id,rol: user.tipo, email: user.email,nombre: user.nombre,apellido: user.apellido}, config.auth.secret, {
-        expiresIn: 86400 // 24 hours
+        expiresIn: '365d' // 24 hours
       });
       res.status(200).send({
         id: user.id,

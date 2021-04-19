@@ -68,7 +68,7 @@ exports.findOne = (req, res) => {
 
 // Update a Book by the id in the request
 exports.update = (req, res) => {
-  console.log(req)
+
   const id = req.body.id;
 
   Area.update({
@@ -100,7 +100,7 @@ exports.update = (req, res) => {
 
 // Delete a Book with the specified id in the request
 exports.delete = (req, res) => {
-  console.log(req)
+
   const id = req.body.id;
   Sede.destroy({
     where: { id: id }
