@@ -13,21 +13,25 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
             type: DataTypes.ENUM('Si','No'),
             unique: false
         },
-        tercero_formato: {
-         type: DataTypes.STRING(25)
+        status: {
+          type: DataTypes.ENUM('Pendiente','Aprobado','Rechazado'),
+          defaultValue: 'Pendiente',
+          unique: false
+       },
+       status_pago: {
+        type: DataTypes.ENUM('','Pendiente','Cancelado'),
+        defaultValue: '',
+        unique: false
         },
+        consecutivo: {
+          type: DataTypes.STRING(15),
+          unique: true
+       },
         otros: {
             type: DataTypes.STRING(20)
-        },
-        usuario_tecnico: {
-          type: DataTypes.STRING(15)
-        },
-        entidad: {
-            type: DataTypes.STRING(15)
-        },
-        created_at: {
-          allowNull: false,
-          type: DataTypes.DATE
+        }, 
+        observacion: {
+            type: DataTypes.STRING(255)
         },
         consecutivo: {
             type: DataTypes.STRING(15)
@@ -42,9 +46,6 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
             type: DataTypes.STRING
         },
         valor: {
-            type: DataTypes.STRING(15)
-        },
-        usuario_autorizador: {
             type: DataTypes.STRING(15)
         },
         created_at: {

@@ -79,7 +79,21 @@ exports.findCoordinadores = (req, res) => {
     });
 };
 
+exports.findAdministrador = async (req, res) => {
 
+
+ await User.findAll({
+    where: {tipo:"Administrador"}, // conditions
+    attributes: ['nombre', 'apellido','id', 'email',]
+  }).then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.send(500).send({
+        message: err.message || "Ocurrio un erro al acceder ."
+      });
+    });
+};
 
 
 exports.findOne = (req, res) => {

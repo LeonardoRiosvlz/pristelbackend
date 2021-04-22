@@ -42,7 +42,7 @@ db.notificacion = require("./notificacion.model.js")(sequelize, Sequelize, DataT
 db.conversacion = require("./conversacion.model.js")(sequelize, Sequelize, DataTypes);
 db.suscripciones = require("./suscripciones.model.js")(sequelize, Sequelize, DataTypes);
 db.mensajes = require("./mensajes.model.js")(sequelize, Sequelize, DataTypes);
-
+db.imputaciones = require("./imputaciones.model.js")(sequelize, Sequelize, DataTypes);
 
 
 db.user.hasMany(db.permiso, { foreignKey: 'uid' });
@@ -50,6 +50,21 @@ db.entidad.hasMany(db.permiso, { foreignKey: 'eid' });
 //cajeros//
 db.entidad.hasMany(db.cajero_ath, { foreignKey: 'id_entidad' });
 db.cajero_ath.belongsTo(db.entidad, { foreignKey: 'id_entidad' });
+//imputaciones//
+db.entidad.hasMany(db.imputaciones, { foreignKey: 'id_entidad' });
+db.imputaciones.belongsTo(db.entidad, { foreignKey: 'id_entidad' });
+//formato// 
+db.user.hasMany(db.formato, { as: 'Tecnico', foreignKey: 'tecnico_id' });
+db.user.hasMany(db.formato, { as: 'Autorizador', foreignKey: 'autorizador_id' });
+db.user.hasMany(db.formato, { as: 'Solicitante', foreignKey: 'solicitante_id' });
+db.formato.belongsTo(db.user, { as: 'Tecnico', foreignKey: 'tecnico_id' });
+db.formato.belongsTo(db.user, { as: 'Autorizador', foreignKey: 'autorizador_id' });
+db.formato.belongsTo(db.user, { as: 'Solicitante', foreignKey: 'solicitante_id' }); 
+db.tercero.hasMany(db.formato, { foreignKey: 'tercero_id' });
+db.formato.belongsTo(db.tercero, { foreignKey: 'tercero_id' });
+db.entidad.hasMany(db.formato, { foreignKey: 'entidad_id' });
+db.formato.belongsTo(db.entidad, { foreignKey: 'entidad_id' }); 
+//formato//
 //programacion//
 db.cajero_ath.hasMany(db.programacion_ath, { foreignKey: 'id_cajero' });
 db.programacion_ath.belongsTo(db.cajero_ath, { foreignKey: 'id_cajero' });
