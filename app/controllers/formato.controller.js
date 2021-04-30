@@ -22,13 +22,13 @@ exports.create =async (req, res) => {
     otros: req.body.otros,
     observacion: req.body.observacion,
     descripcion_formato: req.body.descripcion_formato,
-    codigo_imputacion: req.body.codigo_imputacion,
-    descripcion_codigo: req.body.descripcion_codigo,
+    items: req.body.items,
     valor: req.body.valor,
+    codigo_tecnico: req.body.codigo_tecnico,
     tecnico_id: req.body.tecnico_id,
     autorizador_id: req.body.autorizador_id,
     entidad_id: req.body.entidad_id,
-    solicitante_id: req.body.req.userId,
+    solicitante_id: req.userId,
   };
   if (req.body.tercero_id) {
     formato.tercero_id= req.body.tercero_id;
@@ -105,19 +105,20 @@ exports.findOne =async (req, res) => {
 
 // Update a Book by the id in the request
 exports.update =async (req, res) => {
+  console.log(req.body.id);
  await Formato.update({
   pago_terceros: req.body.pago_terceros,
   consecutivo: req.body.consecutivo,
   otros: req.body.otros,
   observacion: req.body.observacion,
   descripcion_formato: req.body.descripcion_formato,
-  codigo_imputacion: req.body.codigo_imputacion,
-  descripcion_codigo: req.body.descripcion_codigo,
+  items: req.body.items,
   valor: req.body.valor,
+  codigo_tecnico: req.body.codigo_tecnico,
   tecnico_id: req.body.tecnico_id,
-  autorizador: req.body.autorizador,
+  autorizador_id: req.body.autorizador_id,
   entidad_id: req.body.entidad_id,
-  tercero_id: req.body.tercero_id,
+  solicitante_id: req.userId,
 },{ where: { id: req.body.id }
   })
     .then(num => {
@@ -127,7 +128,7 @@ exports.update =async (req, res) => {
         });
       } else {
         res.send({
-          message: `No puede editar el coargo con el  el =${id}. Tal vez el cargo no existe o la peticion es vacia!`
+          message: `No puede editar el tal vez el cargo no existe o la peticion es vacia!`
         });
       }
     })

@@ -1,5 +1,8 @@
 const db = require("../models");
 const CajerosAth = db.cajero_ath;
+const Entidad = db.entidad;
+const Ciudad = db.ciudad;
+const Regional = db.regional;
 const Op = db.Op;
 
 // Create and Save a new Book
@@ -18,20 +21,22 @@ exports.create = (req, res) => {
     tipologia: req.body.tipologia,
     terminal: req.body.terminal,
     direccion: req.body.direccion,
-    ciudad: req.body.ciudad,
-    regional: req.body.regional,
-    site: req.body.site,
+    numero_site: req.body.numero_site,
     comparte_site: req.body.comparte_site,
+    compartido_con: req.body.compartido_con,
     cumpleanos: req.body.cumpleanos,
     administrado: req.body.administrado,
     tipo_site: req.body.tipo_site,
     cierre_nocturno: req.body.cierre_nocturno,
     apertura: req.body.apertura,
-    cierre: req.body.cierre,
+    hora_apertura: req.body.hora_apertura,
+    hora_cierre: req.body.hora_cierre,
+    mantenimiento: req.body.mantenimiento,
     aseo: req.body.aseo,
-    dias_respuesta: req.body.dias_respuesta,
+    entidad_bancaria: req.body.entidad_bancaria,
     id_entidad: req.body.id_entidad,
-
+    regional_id: req.body.regional_id,
+    ciudades_id: req.body.ciudades_id,
   };
 
   // Save Book in database
@@ -70,7 +75,48 @@ exports.findAll = (req, res) => {
 // Find a single with an id
 exports.find = (req, res) => {
   const codigo = req.body.codigo;
-  CajerosAth.findAll({ where: { codigo: codigo } })
+  CajerosAth.findAll({
+     where: { codigo: codigo } ,
+     include: [  
+      {
+        model:Ciudad,
+      },
+      {
+        model:Regional,
+      },
+      {
+        model:Entidad,
+        attributes:['imagen']
+      },
+    ],
+    })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving books."
+      });
+    });
+};
+
+
+// Find a single with an id
+exports.byid = (req, res) => {
+  const id = req.body.id;
+  CajerosAth.findAll({
+     where: { id: id },
+     include: [  
+      {
+        model:Entidad,
+        attributes:['imagen']
+      },
+      {
+        model:Ciudad,
+        attributes:['ciudad']
+      }
+    ],
+    })
     .then(data => {
       res.send(data);
     })
@@ -91,19 +137,22 @@ exports.update = (req, res) => {
     tipologia: req.body.tipologia,
     terminal: req.body.terminal,
     direccion: req.body.direccion,
-    ciudad: req.body.ciudad,
-    regional: req.body.regional,
-    site: req.body.site,
+    numero_site: req.body.numero_site,
     comparte_site: req.body.comparte_site,
+    compartido_con: req.body.compartido_con,
     cumpleanos: req.body.cumpleanos,
     administrado: req.body.administrado,
     tipo_site: req.body.tipo_site,
     cierre_nocturno: req.body.cierre_nocturno,
     apertura: req.body.apertura,
-    cierre: req.body.cierre,
+    hora_apertura: req.body.hora_apertura,
+    hora_cierre: req.body.hora_cierre,
+    mantenimiento: req.body.mantenimiento,
     aseo: req.body.aseo,
-    dias_respuesta: req.body.dias_respuesta,
+    entidad_bancaria: req.body.entidad_bancaria,
     id_entidad: req.body.id_entidad,
+    regional_id: req.body.regional_id,
+    ciudades_id: req.body.ciudades_id,
     },{
     where: { id: id }
   })

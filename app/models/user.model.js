@@ -29,6 +29,10 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
         type: DataTypes.STRING,
         unique: false
       },
+      regional: {
+        type: DataTypes.STRING(5),
+        unique: false
+      },
       sexo: {
         type: DataTypes.ENUM('Masculino', 'Femenino'),
         unique: false

@@ -5,7 +5,7 @@ const User = db.user;
 const Op = db.Op;
 
 // Create and Save a new Book
-exports.create = (req, res) => {
+exports.create = async (req, res) => {
   // Validate request
   if (!req.body.empresa) {
     res.status(400).send({
@@ -36,7 +36,7 @@ exports.create = (req, res) => {
   body.aviso= req.body.aviso;
 
   // Save in database
-  Entidad.create(body)
+await  Entidad.create(body)
     .then(data => {
       res.send(data);
     })
@@ -48,9 +48,9 @@ exports.create = (req, res) => {
 };
 
 
-exports.findAll = (req, res) => {
+exports.findAll = async (req, res) => {
 
-    Entidad.findAndCountAll({
+ await   Entidad.findAndCountAll({
     limit: 3000000,
     offset: 0,
     where: {}, // conditions
@@ -70,10 +70,10 @@ exports.findAll = (req, res) => {
 };
 
 // Find a single with an id
-exports.findOne = (req, res) => {
+exports.findOne = async (req, res) => {
   const id = req.params.id;
 
-  Entidad.findByPk(id)
+ await Entidad.findByPk(id)
     .then(data => {
       res.send(data);
     })
@@ -85,14 +85,14 @@ exports.findOne = (req, res) => {
 };
 
 // Update a Book by the id in the request
-exports.update = (req, res) => {
+exports.update =async (req, res) => {
   console.log(req)
   const id = req.body.id;
   const body={};
   if(req.files['filename']){
     const { filename } = req.files['filename'][0]
     body.imagen= `http://localhost:5000/public/${filename}`;
-    console.log(body.imagen);
+  
   }
   body.nombre= req.body.nombre;
   body.apellido= req.body.apellido;
@@ -108,7 +108,7 @@ exports.update = (req, res) => {
   body.requiere_presupuesto= req.body.requiere_presupuesto;
   body.presupuesto= req.body.presupuesto;
   body.aviso= req.body.aviso;
-  Entidad.update( body,
+ await Entidad.update( body,
     {
     where: { id: id }
   })

@@ -21,6 +21,9 @@ module.exports = app => {
     // Delete  with id
     router.post("/find",[cpUpload,authJwt.verifyToken, authJwt.isAdmin], cajerosAthController.find);
 
+    // Delete  with id
+     router.post("/byid",[cpUpload,authJwt.verifyToken, authJwt.isAdmin], cajerosAthController.byid);
+
     router.post("/delete",[cpUpload,authJwt.verifyToken, authJwt.isAdmin], cajerosAthController.delete);
   
     app.use("/api/cajeros/ath", router);

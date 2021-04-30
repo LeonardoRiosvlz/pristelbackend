@@ -10,7 +10,8 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
           primaryKey: true
         },
         tipo: {
-          type: DataTypes.STRING(15)
+          type: DataTypes.ENUM('ATM','KIOSKO'),
+          unique: false
         },
         codigo: {
           type: DataTypes.STRING(10)
@@ -18,26 +19,32 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
         tipologia: {
             type: DataTypes.STRING(25)
         }, 
+        entidad_bancaria: {
+          type: DataTypes.STRING(45)
+        },
         terminal: {
             type: DataTypes.STRING(30)
         },
         direccion: {
             type: DataTypes.STRING(150)
         },
-        ciudad: {
-            type: DataTypes.STRING(30)
+        tipo_site: {
+          type: DataTypes.ENUM('Cabina','Cubículo independiente','Sin site'),
+          unique: false
+        }, 
+        numero_site: {
+          type: DataTypes.STRING(30)
         },
-        regional: {
-            type: DataTypes.STRING(30)
-        },
-        site: {
-            type: DataTypes.STRING(30)
-        },
-        dias_respuesta: {
-          type: DataTypes.STRING(5)
+        mantenimiento: {
+          type: DataTypes.ENUM('Aplica','N/A'),
+          unique: false
         },
         comparte_site: {
-            type: DataTypes.STRING(25)
+          type: DataTypes.ENUM('SI','NO','N/A'),
+          unique: false
+        },
+        compartido_con: {
+          type: DataTypes.JSON
         },
         cumpleanos: {
             type: DataTypes.STRING(25)
@@ -45,21 +52,27 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
         administrado: {
           type: DataTypes.STRING(25)
         },
-        tipo_site: {
-          type: DataTypes.STRING(25)
-        }, 
-        cierre_nocturno: {
-          type: DataTypes.ENUM('Si','No'),
+        aseo: {
+          type: DataTypes.ENUM('DIARIO','FIN DE SEMANA','DE LUNES A VIERNES','DE LUNES A SABADO','NO'),
           unique: false
         },
+        cierre_nocturno: {
+          type: DataTypes.ENUM('DIARIO','FIN DE SEMANA','NO'),
+          unique: false
+        },
+        hora_cierre: {
+          type: DataTypes.STRING(25)
+        },
         apertura: {
+          type: DataTypes.ENUM('DIARIO','FIN DE SEMANA','N/A'),
+          unique: false
+        },
+        hora_apertura: {
           type: DataTypes.STRING(25)
         },
-        cierre: {
-          type: DataTypes.STRING(25)
-        },
-        aseo: {
-          type: DataTypes.STRING(25)
+        estado: {
+          type: DataTypes.ENUM('Activo','Retirado','Suspendido'),
+          unique: false
         },
         created_at: {
           allowNull: false,

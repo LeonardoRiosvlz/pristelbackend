@@ -13,63 +13,70 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
            type: DataTypes.STRING(15),
            unique: true
         },
+        categoria: {
+          type: DataTypes.STRING(25),
+        },
+        titulo: {
+          type: DataTypes.STRING(45),
+        },
+        subcategoria: {
+          type: DataTypes.STRING(25),
+        },
+        consecutivo: {
+            type: DataTypes.STRING(15),
+            unique: true
+        },
         codigo_tecnico: {
             type: DataTypes.STRING(15)
         },
         codigo_cajero: {
             type: DataTypes.STRING(15)
         },
+        tipo_llamada: {
+          type: DataTypes.STRING(15) 
+        },
         llamada: {
-          type: DataTypes.STRING(15)
+            type: DataTypes.STRING(15)
         },
-        fecha_llamada: {
+        tipo_servicio: {
+          type: DataTypes.STRING(100)
+        },
+        prioridad: {
+          type: DataTypes.STRING(20)
+        },
+        margen: {
+          type: DataTypes.STRING(20)
+        },
+        fecha_creacion: {
           allowNull: true,
-          type: DataTypes.DATEONLY 
+          type: DataTypes.DATE
         },
-        cotizacion_visita: {
-            type: DataTypes.ENUM('Si','No'),
-            unique: false
-        },
-        cotizacion_visita: {
-            type: DataTypes.ENUM('Si','No'),
-            unique: false
-        },
-        requiere_producto: {
+        requiere_cita: {
             type: DataTypes.ENUM('Si','No'),
             unique: false
         },
         status: {
-            type: DataTypes.ENUM('Pendiente','Cerrada'),
-            defaultValue: 'Pendiente',
+            type: DataTypes.ENUM('Creada','Programada','Archivada','Reprogramada','Escalada','Suspendida','Devuelta','Aceptada','Legalizada','Cumplida','En proceso','Vencida','Cerrada'),
+            defaultValue: 'Creada',
             unique: false
         }, 
-        fecha_programacion: {
-            allowNull: true,
-            type: DataTypes.DATEONLY
-        },
         fecha_vencimiento: {
             allowNull: true,
-            type: DataTypes.DATEONLY
+            type: DataTypes.DATE
         },
-        fecha_visita: {
-            allowNull: true,
-            type: DataTypes.DATEONLY
+        fecha_cierre: {
+          allowNull: true,
+          type: DataTypes.DATE
         },
-        fecha_iluminacion: {
-            allowNull: true,
-            type: DataTypes.DATEONLY
+        vencimiento_tecnico: {
+          allowNull: true,
+          type: DataTypes.DATE
         },
         descripcion: {
             type: DataTypes.STRING
         },
-        servicio_cobro: {
-            type: DataTypes.STRING(25)
-        },
-        codigo_parametro: {
-            type: DataTypes.STRING(20)
-        },
-        parametro_labor: {
-            type: DataTypes.STRING(20)
+        observacion_cierre: {
+          type: DataTypes.STRING
         },
         created_at: {
             allowNull: false,

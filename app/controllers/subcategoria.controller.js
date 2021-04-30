@@ -1,27 +1,25 @@
 const db = require("../models");
-const Imputaciones = db.imputaciones;
-const Entidad = db.entidad;
+const Subcategoria = db.subcategoria;
 const Op = db.Op;
 
 // Create and Save a new Book
-exports.create =async (req, res) => {
+exports.create = async (req, res) => {
   // Validate request
-  if (!req.body.codigo) {
+  if (!req.body.subcategoria) {
     res.status(400).send({
       message: "Content can not be empty!"
     });
     return;
   }
-  // Create a Book
-  const codigo = {
-    codigo: req.body.codigo,
-    nombre: req.body.nombre,
+  // Create 
+  const body = {
+    subcategoria: req.body.subcategoria,
     descripcion: req.body.descripcion,
-    id_entidad: req.body.id_entidad,
+    categoria: req.body.categoria,
   };
 
-  // Save Book in database
-await  Imputaciones.create(codigo)
+  // Save in database
+ await Subcategoria.create(body)
     .then(data => {
       res.send(data);
     })
@@ -35,19 +33,13 @@ await  Imputaciones.create(codigo)
 
 exports.findAll = async (req, res) => {
 
- await  Imputaciones.findAndCountAll({
+await Subcategoria.findAndCountAll({
     limit: 3000000,
     offset: 0,
     where: {}, // conditions
     order: [
       ['id', 'DESC'],
     ],
-    include: [  
-    {
-      model: Entidad,
-      attributes:['id','empresa']
-   },
-    ]
   })
     .then(data => {
       res.send(data);
@@ -59,33 +51,56 @@ exports.findAll = async (req, res) => {
     });
 };
 
-// Find a single with an id
-exports.findOne =async (req, res) => {
-  const id = req.body.id;
 
-await  Imputaciones.findAll({
-where: {id_entidad: req.body.id},
-}).then(data => {
+exports.find = async (req, res) => {
+    const categoria = req.body.categoria;
+    await Subcategoria.findAndCountAll({
+        limit: 3000000,
+        offset: 0,
+        where: {categoria:categoria}, // conditions
+        order: [
+          ['id', 'DESC'],
+        ],
+      })
+        .then(data => {
+          res.send(data);
+        })
+        .catch(err => {
+          res.send(500).send({
+            message: err.message || "Some error accurred while retrieving books."
+          });
+        });
+    };
+
+// Find a single with an id
+exports.findOne = async (req, res) => {
+  const id = req.params.id;
+
+  await Subcategoria.findByPk(id)
+    .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
-        message: `erro al encontrar= ${id}`
+        message: `erro al editar el cargo= ${id}`
       });
     });
 };
 
 // Update a Book by the id in the request
-exports.update =async (req, res) => {
+exports.update = async (req, res) => {
+  console.log(req)
   const id = req.body.id;
 
- await Imputaciones.update({
-    codigo: req.body.codigo,
-    nombre: req.body.nombre,
+  await Subcategoria.update({
+    subcategoria: req.body.subcategoria,
     descripcion: req.body.descripcion,
-    entidad_id: req.body.entidad_id,
+    categoria: req.body.categoria,
     },{
-    where: { id: id }
+    where: { id: id },
+    order: [
+      ['id', 'DESC'],
+    ],
   })
     .then(num => {
       if (num == 1) {
@@ -109,7 +124,7 @@ exports.update =async (req, res) => {
 exports.delete = async (req, res) => {
   console.log(req)
   const id = req.body.id;
- await Imputaciones.destroy({
+  await Subcategoria.destroy({
     where: { id: id }
   })
     .then(num => {

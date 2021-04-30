@@ -1,13 +1,15 @@
 const db = require("../models");
 const ProgramacionAth = db.programacion_ath;
 const Cajero = db.cajero_ath;
+const Entidad = db.entidad;
 const User = db.user;
+const Ciudad = db.ciudad;
 const Op = db.Op;
 
 // Create and Save a new Book
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.consecutivo) {
+  if (!req.body.id_cajero) {
     res.status(400).send({
       message: "Content can not be empty!"
     });
@@ -15,28 +17,20 @@ exports.create = (req, res) => {
   }
   // Create a Book
   const program = {
-    consecutivo: req.body.consecutivo,
-    descripcion: req.body.descripcion,
-    codigo_tecnico: req.body.codigo_tecnico,
-    id_tecnico: req.body.id_tecnico,
-    llamada: req.body.llamada,
-    codigo_cajero: req.body.codigo_cajero,
-    cotizacion_visita: req.body.cotizacion_visita,
-    fecha_llamada: req.body.fecha_llamada,
     fecha_vencimiento: req.body.fecha_vencimiento,
-    requiere_producto: req.body.requiere_producto,
-    fecha_iluminacion: req.body.fecha_iluminacion,
-    servicio_cobro: req.body.servicio_cobro,
-    codigo_parametro: req.body.codigo_parametro,
-    parametro_labor: req.body.parametro_labor,
+    prioridad: req.body.prioridad,
+    categoria: req.body.categoria,
+    tipo_llamada: req.body.tipo_llamada,
+    llamada: req.body.llamada,
+    titulo: req.body.titulo,
+    descripcion: req.body.descripcion,
+    codigo_cajero: req.body.codigo_cajero,
+    tipo_servicio: req.body.tipo_servicio,
+    requiere_cita: req.body.requiere_cita,
+    subcateogoria: req.body.subcateogoria,
     id_cajero: req.body.id_cajero,
   };
-  if (req.body.fecha_visita) {
-      program.fecha_visita=req.body.fecha_visita
-  }
-  if (req.body.fecha_programacion) {
-    program.fecha_programacion=req.body.fecha_programacion
-  }
+
   // Save Book in database
   ProgramacionAth.create(program)
     .then(data => {
@@ -50,9 +44,9 @@ exports.create = (req, res) => {
 };
 
 
-exports.findAll = (req, res) => {
+exports.findAll = async (req, res) => {
 
-  ProgramacionAth.findAndCountAll({
+await  ProgramacionAth.findAndCountAll({
     limit: 3000000,
     offset: 0,
     where: {}, // conditions
@@ -65,7 +59,10 @@ exports.findAll = (req, res) => {
     }, 
     {
       model: Cajero,
-      attributes:['ciudad', 'codigo'],
+      attributes:[ 'codigo','regional_id'],
+      include: [{ model: Ciudad,attributes:[ 'ciudad'] },{ model: Entidad,attributes:[ 'imagen'] }
+      
+      ]
     }],
   }) 
     .then(data => {
@@ -77,6 +74,41 @@ exports.findAll = (req, res) => {
       });
     });
 };
+
+
+exports.find = async (req, res) => {
+  const id= req.body.id;
+  await  ProgramacionAth.findAll({
+      limit: 3000000,
+      offset: 0,
+      where: {id:id}, // conditions
+      order: [
+        ['id', 'DESC'],
+      ],
+      include: [{
+        model: User,
+        attributes:['nombre', 'apellido', 'tipo','email' ],
+      }, 
+      {
+        model: Cajero,
+        attributes:[ 'codigo'],
+        include: [
+          { model: Ciudad,attributes:[ 'ciudad','regional_id'] },
+          { model: Entidad,attributes:[ 'imagen'] },
+        ]
+      }],
+    }) 
+      .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res.send(500).send({
+          message: err.message || "Ocurrio un erro al intentar acceder a este recursos."
+        });
+      });
+  };
+  
+
 
 // Find a single with an id
 exports.findOne = (req, res) => {
@@ -98,28 +130,19 @@ exports.update = (req, res) => {
   console.log(req)
   const id = req.body.id;
   const program = {
-    consecutivo: req.body.consecutivo,
-    descripcion: req.body.descripcion,
-    codigo_tecnico: req.body.codigo_tecnico,
-    id_tecnico: req.body.id_tecnico,
-    llamada: req.body.llamada,
-    codigo_cajero: req.body.codigo_cajero,
-    cotizacion_visita: req.body.cotizacion_visita,
-    fecha_llamada: req.body.fecha_llamada,
     fecha_vencimiento: req.body.fecha_vencimiento,
-    requiere_producto: req.body.requiere_producto,
-    fecha_iluminacion: req.body.fecha_iluminacion,
-    servicio_cobro: req.body.servicio_cobro,
-    codigo_parametro: req.body.codigo_parametro,
-    parametro_labor: req.body.parametro_labor,
+    prioridad: req.body.prioridad,
+    categoria: req.body.categoria,
+    tipo_llamada: req.body.tipo_llamada,
+    llamada: req.body.llamada,
+    titulo: req.body.titulo,
+    descripcion: req.body.descripcion,
+    codigo_cajero: req.body.codigo_cajero,
+    tipo_servicio: req.body.tipo_servicio,
+    requiere_cita: req.body.requiere_cita,
+    subcateogoria: req.body.subcateogoria,
     id_cajero: req.body.id_cajero,
   };
-  if (req.body.fecha_visita) {
-      program.fecha_visita=req.body.fecha_visita
-  }
-  if (req.body.fecha_programacion) {
-    program.fecha_programacion=req.body.fecha_programacion
-  }
   ProgramacionAth.update(program,{
     where: { id: id }
   })

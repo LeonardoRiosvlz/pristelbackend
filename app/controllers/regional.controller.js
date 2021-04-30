@@ -1,27 +1,23 @@
 const db = require("../models");
-const Imputaciones = db.imputaciones;
-const Entidad = db.entidad;
+const Regional = db.regional
 const Op = db.Op;
 
 // Create and Save a new Book
-exports.create =async (req, res) => {
+exports.create = async (req, res) => {
   // Validate request
-  if (!req.body.codigo) {
+  if (!req.body.nombre) {
     res.status(400).send({
       message: "Content can not be empty!"
     });
     return;
   }
   // Create a Book
-  const codigo = {
-    codigo: req.body.codigo,
-    nombre: req.body.nombre,
-    descripcion: req.body.descripcion,
-    id_entidad: req.body.id_entidad,
-  };
+  const body={};
+  body.nombre= req.body.nombre;
+  body.descripcion= req.body.descripcion;
 
   // Save Book in database
-await  Imputaciones.create(codigo)
+ await Regional.create(body)
     .then(data => {
       res.send(data);
     })
@@ -33,21 +29,15 @@ await  Imputaciones.create(codigo)
 };
 
 
-exports.findAll = async (req, res) => {
-
- await  Imputaciones.findAndCountAll({
+exports.findFormato = async (req, res) => {
+const id =req.body.id;
+await  Regional.findAll({
     limit: 3000000,
     offset: 0,
-    where: {}, // conditions
+    where: {formato_id: id}, // conditions
     order: [
       ['id', 'DESC'],
     ],
-    include: [  
-    {
-      model: Entidad,
-      attributes:['id','empresa']
-   },
-    ]
   })
     .then(data => {
       res.send(data);
@@ -59,32 +49,51 @@ exports.findAll = async (req, res) => {
     });
 };
 
-// Find a single with an id
-exports.findOne =async (req, res) => {
-  const id = req.body.id;
 
-await  Imputaciones.findAll({
-where: {id_entidad: req.body.id},
-}).then(data => {
+exports.findAll = async (req, res) => {
+    const id =req.body.id;
+    await  Regional.findAndCountAll({
+        limit: 3000000,
+        offset: 0,
+        where: { }, // conditions
+        order: [
+          ['id', 'DESC'],
+        ],
+      })
+        .then(data => {
+          res.send(data);
+        })
+        .catch(err => {
+          res.send(500).send({
+            message: err.message || "Some error accurred while retrieving books."
+          });
+        });
+    };
+
+// Find a single with an id
+exports.findOne = async (req, res) => {
+  const id = req.params.id;
+
+ await Regional.findByPk(id)
+    .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
-        message: `erro al encontrar= ${id}`
+        message: `erro al editar el cargo= ${id}`
       });
     });
 };
 
 // Update a Book by the id in the request
-exports.update =async (req, res) => {
-  const id = req.body.id;
+exports.update = async (req, res) => {
+  // Create a Book
+  const body={};
+  body.nombre= req.body.nombre;
+  body.descripcion= req.body.descripcion;
+    const id = req.body.id;
 
- await Imputaciones.update({
-    codigo: req.body.codigo,
-    nombre: req.body.nombre,
-    descripcion: req.body.descripcion,
-    entidad_id: req.body.entidad_id,
-    },{
+ await Regional.update(body,{
     where: { id: id }
   })
     .then(num => {
@@ -107,9 +116,9 @@ exports.update =async (req, res) => {
 
 // Delete a Book with the specified id in the request
 exports.delete = async (req, res) => {
-  console.log(req)
+
   const id = req.body.id;
- await Imputaciones.destroy({
+ await Regional.destroy({
     where: { id: id }
   })
     .then(num => {
@@ -129,3 +138,4 @@ exports.delete = async (req, res) => {
       });
     });
 };
+

@@ -27,6 +27,9 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
           type: DataTypes.STRING(15),
           unique: true
        },
+       items: {
+          type: DataTypes.JSON
+        },
         otros: {
             type: DataTypes.STRING(20)
         }, 
@@ -37,12 +40,6 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
             type: DataTypes.STRING(15)
         },
         descripcion_formato: {
-            type: DataTypes.STRING
-        },
-        codigo_imputacion: {
-            type: DataTypes.STRING
-        },
-        descripcion_codigo: {
             type: DataTypes.STRING
         },
         valor: {

@@ -31,12 +31,19 @@ require("./app/routes/cargo.routes")(app);
 require("./app/routes/area.routes")(app);
 require("./app/routes/terceros.routes")(app);
 require("./app/routes/categoria.routes")(app);
+require("./app/routes/subcategoria.routes")(app);
 require("./app/routes/entidades.routes")(app);
 require("./app/routes/permisos.routes")(app);
 require("./app/routes/notificacion.routes")(app);
 require("./app/routes/formato.routes")(app);
 require("./app/routes/chat.routes")(app);
 require("./app/routes/imputaciones.routes")(app);
+require("./app/routes/abonos.routes")(app);
+require("./app/routes/seguridad.routes")(app);
+require("./app/routes/regional.routes")(app);
+require("./app/routes/ciudades.routes")(app);
+require("./app/routes/trazabilidad_ath.routes")(app);
+require("./app/routes/album.routes")(app); 
 // Cajeros
 
 require("./app/routes/cajeros_ath.routes")(app);

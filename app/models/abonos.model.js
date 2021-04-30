@@ -12,13 +12,7 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
         valor_abono: {
           type: DataTypes.STRING(25)
         },
-        id_formato: {
-            type: DataTypes.STRING(25)
-        },
-        id_consecutivo: {
-            type: DataTypes.STRING(25)
-        },
-        pago_terceros: {
+        tipo: {
             type: DataTypes.ENUM('Efectivo','Transferencia','Giro'),
         },
         descripcion_abono: {
