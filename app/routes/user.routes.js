@@ -24,6 +24,8 @@ module.exports = function(app) {
 
   app.post("/api/user/tecnico",[cpUpload,authJwt.verifyToken], controller.findTecnico);
 
+  app.post("/api/user/regional",[cpUpload,authJwt.verifyToken], controller.findregional);
+
   app.get("/api/user/adminstrador",[cpUpload,authJwt.verifyToken], controller.findAdministrador);
   
   app.put("/user/pefil",[cpUpload ,authJwt.verifyToken], controller.update);

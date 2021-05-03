@@ -15,6 +15,9 @@ module.exports = app => {
     // Create a new cargo
     router.post("/status",[cpUpload,authJwt.verifyToken, authJwt.isAdmin], formatoController.status);
 
+    // Create a new cargo
+    router.post("/find",[cpUpload,authJwt.verifyToken, authJwt.isAdmin], formatoController.find);
+
     // Retrieve all cargos
     router.get("/", formatoController.findAll);
   

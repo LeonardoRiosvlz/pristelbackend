@@ -14,6 +14,9 @@ module.exports = app => {
     // Create a new cargo
     router.post("/find",[cpUpload,authJwt.verifyToken, authJwt.isAdmin], programacionAthController.find);
 
+    // Create a new cargo
+     router.post("/programar",[cpUpload,authJwt.verifyToken, authJwt.isAdmin], programacionAthController.programar);
+
     // Retrieve all cargos
     router.get("/", programacionAthController.findAll);
   

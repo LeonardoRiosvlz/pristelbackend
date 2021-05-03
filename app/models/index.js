@@ -99,8 +99,11 @@ db.cajero_ath.hasMany(db.programacion_ath, { foreignKey: 'id_cajero' });
 db.programacion_ath.belongsTo(db.cajero_ath, { foreignKey: 'id_cajero' });
 db.cajero_ath.hasMany(db.trazabilidad_ath, { foreignKey: 'id_cajero' });
 db.trazabilidad_ath.belongsTo(db.cajero_ath, { foreignKey: 'id_cajero' });
-db.user.hasMany(db.programacion_ath, { foreignKey: 'id_tecnico' }); 
-db.programacion_ath.belongsTo(db.user, { foreignKey: 'id_tecnico' }); 
+db.user.hasMany(db.programacion_ath, { as: 'Tecnico_ath', foreignKey: 'tecnico_id' });
+db.user.hasMany(db.programacion_ath, { as: 'Coordinador', foreignKey: 'coordinador_id' });
+db.programacion_ath.belongsTo(db.user, { as: 'Tecnico_ath', foreignKey: 'tecnico_id' });
+db.programacion_ath.belongsTo(db.user, { as: 'Coordinador', foreignKey: 'coordinador_id' });
+
 db.programacion_ath.hasMany(db.gestionAth, { foreignKey: 'id_programacion' }); 
 db.gestionAth.belongsTo(db.programacion_ath, { foreignKey: 'id_programacion' }); 
 //fin programcion //

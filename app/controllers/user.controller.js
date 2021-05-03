@@ -51,7 +51,7 @@ exports.findTecnico = (req, res) => {
       tipo: 'Tecnico',
       status: 'activo'
     },
-     attributes: ['nombre', 'apellido','id','email',  'codigo', 'telefono','imagen','direccion','tipo_tecnico',] })
+     attributes: ['nombre', 'apellido','id','email',  'codigo', 'telefono','imagen','direccion','tipo_tecnico','cuenta','nombre_cuenta'] })
     .then(data => {
       res.send(data);
     })
@@ -94,6 +94,34 @@ exports.findAdministrador = async (req, res) => {
       });
     });
 };
+
+
+
+exports.findregional = async (req, res) => {
+  const id= req.body.id;
+  console.log(id);
+  await  User.findAll({
+      limit: 3000000,
+      offset: 0,
+      where: {
+        regional:id
+      }, // conditions
+      order: [
+        ['id', 'DESC'],
+      ],
+      attributes:['nombre', 'apellido','imagen','imagen','id' ,'codigo'],
+    }) 
+      .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res.send(500).send({
+          message: err.message || "Ocurrio un erro al intentar acceder a este recursos."
+        });
+      });
+  };
+  
+
 
 
 exports.findOne = (req, res) => {

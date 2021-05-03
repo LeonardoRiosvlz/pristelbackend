@@ -18,6 +18,12 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
         origen: {
             type: DataTypes.STRING
         },
+        icon: {
+          type: DataTypes.STRING
+        },
+        color: {
+          type: DataTypes.STRING
+        },
         modulo: {
             type: DataTypes.STRING
         },
