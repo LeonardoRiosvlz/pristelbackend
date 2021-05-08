@@ -5,6 +5,7 @@ const User = db.user;
 const Tecnico = db.user;
 const Tercero = db.tercero;
 const Entidad = db.entidad;
+const Abono = db.abonos;
 const Notificacion = db.notificacion;
 const Op = db.Op;
 
@@ -156,6 +157,9 @@ exports.find = async (req, res) => {
        model: Tercero,
        attributes:['nombre_tercero']
      },
+     {
+      model: Abono
+    },
      {
        model: Entidad,
        attributes:['empresa']

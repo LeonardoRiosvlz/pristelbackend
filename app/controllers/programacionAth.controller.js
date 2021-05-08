@@ -24,6 +24,7 @@ exports.create = (req, res) => {
     subcategoria: req.body.subcategoria,
     tipo_llamada: req.body.tipo_llamada,
     llamada: req.body.llamada,
+    margen: req.body.margen,
     titulo: req.body.titulo,
     descripcion: req.body.descripcion,
     codigo_cajero: req.body.codigo_cajero,
@@ -153,6 +154,7 @@ exports.update = (req, res) => {
     tipo_llamada: req.body.tipo_llamada,
     llamada: req.body.llamada,
     titulo: req.body.titulo,
+    margen: req.body.margen,
     descripcion: req.body.descripcion,
     codigo_cajero: req.body.codigo_cajero,
     tipo_servicio: req.body.tipo_servicio,
@@ -188,7 +190,7 @@ exports.programar = async (req, res) => {
     vencimiento_tecnico: req.body.vencimiento_tecnico,
     tecnico_id: req.body.tecnico_id,
     codigo_tecnico: req.body.codigo_tecnico,
-    status: "Programada",
+    status: req.body.status,
   };
  await ProgramacionAth.update(program,{
     where: { id: id }
@@ -196,33 +198,21 @@ exports.programar = async (req, res) => {
     .then(num => {
       if (num == 1) {
             // Create 
-            const data = {
-              titulo: `Nueva actividad ATH`,
-              descripcion: `Se te ha vinculado con una nueva progracion ATH-${id}`,
-              origen: req.userId,
-              modulo: "programcion_ath",
+
+            const datos = {
+              titulo: `Programción ATH (${req.body.status})`,
+              descripcion: `Programción ${req.body.status} para la fecha ${req.body.vencimiento_tecnico}`,
+              origen: "",
+              modulo: "llamadas",
+              icon: "ri-calendar-line",
+              color: "avatar-title bg-primary rounded-circle font-size-16",
               uid: req.body.tecnico_id,
+              canal: "",
             };
-            // Save
-            Notificacion.create(data)
-              .then(data => {
-                res.send(data);
-              })
-              .catch(err => {
-                res.status(500).send({
-                  message: err.message || "Some error occurred while creating the Book."
-                });
-                return;
-              });
-              User.findByPk(req.body.tecnico_id)
-              .then(datas => {
-                global.io.to(datas.canal).emit('cliente', data);
-              })
-              .catch(err => {
-                res.status(500).send({
-                  message: `erro al editar el cargo= ${id}`
-                });
-              });
+            CrearNotificacion(datos);
+            res.send({
+              message: "editado satisfactoriamente."
+            });
       } else {
         res.send({
           message: `No puede editar la programacion con el  el =${id}. Tal vez no existe o la peticion es vacia!`
@@ -235,6 +225,38 @@ exports.programar = async (req, res) => {
       });
     });
 };
+
+
+
+async function CrearNotificacion(datos){
+  // Save
+  await  Notificacion.create(datos)
+  .then( data => {
+    notificar(data);
+  })
+  .catch(err => {
+    res.status(500).send({
+      message: err.message || "Some error occurred while creating the Book."
+    });
+    return;
+  });
+}
+
+async function notificar(data){
+await  User.findByPk(data.uid)
+.then(datas => {
+ console.log(datas);
+ global.io.to(datas.canal).emit('cliente', data);
+})
+.catch(err => {
+ res.status(500).send({
+   message: `erro al editar el cargo= ${id}`
+ });
+});
+
+}
+
+
 
 
 // Delete a Book with the specified id in the request
