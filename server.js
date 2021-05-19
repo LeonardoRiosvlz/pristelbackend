@@ -45,6 +45,9 @@ require("./app/routes/ciudades.routes")(app);
 require("./app/routes/trazabilidad_ath.routes")(app);
 require("./app/routes/album.routes")(app); 
 require("./app/routes/gestion_ath.routes")(app); 
+require("./app/routes/notas.routes")(app); 
+require("./app/routes/calendario.routes")(app); 
+require("./app/routes/legalizaciones_ath.routes")(app); 
 // Cajeros
 
 require("./app/routes/cajeros_ath.routes")(app);

@@ -1,6 +1,7 @@
 const db = require("../models");
 const Gestion = db.gestionAth;
 const Notificacion = db.notificacion;
+const ProgramacionAth = db.programacion_ath;
 const User = db.user;
 const Op = db.Op;
 
@@ -45,24 +46,36 @@ exports.create = async (req, res) => {
  await Gestion.create(body)
     .then(data => {
       res.send(data);
-     /// const datos = {
-     ///   titulo: `Abono realizado (${req.body.tipo})`,
-     ///   descripcion: `Se realizó un abono con el valor de $ ${req.body.valor_abono}`,
-     ///   origen: "",
-     ///   modulo: "abonos",
-     ///   icon: "ri-money-dollar-box-line",
-     ///   color: "avatar-title bg-success rounded-circle font-size-16",
-     ///   uid: req.body.tecnico_id,
-     ///   canal: "",
-     /// };
-     /// CrearNotificacion(datos);
+      const datos = {
+        titulo: `Gestion realizada `,
+        descripcion: `Se realizó una gestión para el consecutivo (ATH-${req.body.id_programacion})`,
+        origen: "",
+        modulo: "llamadas_ATH",
+        icon: "ri-hammer-line",
+        color: "avatar-title bg-success rounded-circle font-size-16",
+        uid: req.body.coordinador_id,
+        canal: "",
+      };
+      CrearNotificacion(datos);
     })
     .catch(err => {
       res.status(500).send({
         message: err.message || "Some error occurred while creating the Book."
       });
     });
-};
+
+    ProgramacionAth.update({
+      status:"En proceso"
+    },{
+      where: { id: req.body.id_programacion }
+    })
+      .then(num => {
+
+      })
+      .catch(err => {
+
+      });
+  };
 
 
 
@@ -184,7 +197,7 @@ exports.update = async (req, res) => {
   body.id_programacion= req.body.id_programacion;
   const id = req.body.id;
 
- await Abonos.update(body,{
+ await Gestion.update(body,{
     where: { id: id }
   })
     .then(num => {
@@ -205,11 +218,88 @@ exports.update = async (req, res) => {
     });
 };
 
+
+
+
+
+
+
+// Update a Book by the id in the request
+exports.respuesta = async (req, res) => {
+  const body={};
+  body.status= req.body.status;
+  body.observaciones_analista= req.body.observaciones_analista;
+  body.vencimiento_tecnico= req.body.vencimiento_tecnico;
+  const id = req.body.id;
+
+ await Gestion.update(body,{
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "editado satisfactoriamente."
+        });
+        if (req.body.status==="Devuelta") {
+          const datos = {
+            titulo: `Gestión devuelta (ATH-${req.body.id_programacion})`,
+            descripcion: `Observaciones: ${req.body.observaciones_analista}`,
+            origen: "",
+            modulo: "llamadas_ATH",
+            icon: "ri-reply-fill",
+            color: "avatar-title bg-danger rounded-circle font-size-16",
+            uid: req.body.tecnico_id,
+            canal: "",
+          };
+          CrearNotificacion(datos);
+        }else{
+          const datos = {
+            titulo: `Gestión aprobada: (ATH-${req.body.id_programacion})`,
+            descripcion: `El analista aprobo su gestión para esta llamada`,
+            origen: "",
+            modulo: "llamadas_ATH",
+            icon: "ri-check-fill",
+            color: "avatar-title bg-success rounded-circle font-size-16",
+            uid: req.body.tecnico_id,
+            canal: "",
+          };
+          CrearNotificacion(datos);
+        }
+
+        
+      } else {
+        res.send({
+          message: `No puede editar el registro con el  el =${id}. Tal vez el cargo no existe o la peticion es vacia!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error al intentar editar el cargo con el id=" + id
+      });
+    });
+
+    ProgramacionAth.update({
+      status:req.body.status,
+      vencimiento_tecnico:req.body.vencimiento_tecnico,
+    },{
+      where: { id: req.body.id_programacion }
+    })
+      .then(num => {
+
+      })
+      .catch(err => {
+
+      });
+};
+
+
+
 // Delete a Book with the specified id in the request
 exports.delete = async (req, res) => {
 
   const id = req.body.id;
- await Abonos.destroy({
+ await Gestion.destroy({
     where: { id: id }
   })
     .then(num => {

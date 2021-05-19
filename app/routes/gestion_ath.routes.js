@@ -27,6 +27,9 @@ module.exports = app => {
     router.put("/",[cpUpload,authJwt.verifyToken, authJwt.isAdmin], gestionAthController.update);
   
     // Delete a cargo with id
+    router.post("/respuesta",[cpUpload,authJwt.verifyToken, authJwt.isAdmin], gestionAthController.respuesta);
+
+    // Delete a cargo with id
     router.post("/delete",[cpUpload,authJwt.verifyToken, authJwt.isAdmin], gestionAthController.delete);
 
   

@@ -5,6 +5,7 @@ const Entidad = db.entidad;
 const User = db.user;
 const Ciudad = db.ciudad;
 const Notificacion = db.notificacion;
+const Legalizaciones = db.legalizacionAth;
 const Op = db.Op;
 
 // Create and Save a new Book
@@ -66,6 +67,9 @@ await  ProgramacionAth.findAndCountAll({
       attributes:['nombre', 'apellido','imagen' ],
     }, 
     {
+      model: Legalizaciones,
+    },
+    {
       model: Cajero,
       attributes:[ 'codigo','regional_id'],
       include: [{ model: Ciudad,attributes:[ 'ciudad'] },{ model: Entidad,attributes:[ 'imagen','id'] }
@@ -106,6 +110,9 @@ exports.find = async (req, res) => {
         model: User, as: 'Coordinador',
         attributes:['nombre', 'apellido','imagen' ],
       }, 
+      {
+        model: Legalizaciones,
+      },
       {
         model: Cajero,
         attributes:[ 'codigo'],
@@ -225,6 +232,129 @@ exports.programar = async (req, res) => {
       });
     });
 };
+
+
+exports.escalar = async (req, res) => {
+  const id = req.body.id;
+  const program = {
+    motivo_escalado: req.body.motivo_escalado,
+    status:"Escalada",
+  };
+ await ProgramacionAth.update(program,{
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+            res.send({
+              message: "editado satisfactoriamente."
+            });
+      } else {
+        res.send({
+          message: `No puede editar la programacion con el  el =${id}. Tal vez no existe o la peticion es vacia!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error al intentar editar la programacion con el id=" + id
+      });
+    });
+};
+
+exports.archivar = async (req, res) => {
+  const id = req.body.id;
+  const program = {
+    motivo_archivado: req.body.motivo_archivado,
+    status:"Archivada",
+  };
+ await ProgramacionAth.update(program,{
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+            res.send({
+              message: "editado satisfactoriamente."
+            });
+      } else {
+        res.send({
+          message: `No puede editar la programacion con el  el =${id}. Tal vez no existe o la peticion es vacia!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error al intentar editar la programacion con el id=" + id
+      });
+    });
+};
+
+exports.cerrar = async (req, res) => {
+  const id = req.body.id;
+  const program = {
+    motivo_cierre: req.body.motivo_cierre,
+    status:"Cerrada",
+  };
+ await ProgramacionAth.update(program,{
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+            res.send({
+              message: "editado satisfactoriamente."
+            });
+      } else {
+        res.send({
+          message: `No puede editar la programacion con el  el =${id}. Tal vez no existe o la peticion es vacia!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error al intentar editar la programacion con el id=" + id
+      });
+    });
+};
+
+
+exports.rechazar = async (req, res) => {
+  const id = req.body.id;
+  const program = {
+    motivo_rechazo: req.body.motivo_rechazo,
+    status:"Rechazada",
+  };
+ await ProgramacionAth.update(program,{
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+            res.send({
+              message: "editado satisfactoriamente."
+            });
+            const datos = {
+              titulo: `Programción ATH-${req.body.id} rechazada por técnico`,
+              descripcion: `Motivo ${req.body.motivo_rechazo}`,
+              origen: "",
+              modulo: "llamadas_ATH",
+              icon: "ri-close-fill",
+              color: "avatar-title bg-danger rounded-circle font-size-16",
+              uid: req.body.coordinador_id,
+              canal: "",
+            };
+            CrearNotificacion(datos);
+      } else {
+        res.send({
+          message: `No puede editar la programacion con el  el =${id}. Tal vez no existe o la peticion es vacia!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error al intentar editar la programacion con el id=" + id
+      });
+    });
+};
+
+
 
 
 

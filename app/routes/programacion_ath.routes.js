@@ -9,22 +9,35 @@ module.exports = app => {
     const router = require("express").Router();
   
     // Create a new cargo
-    router.post("/",[cpUpload,authJwt.verifyToken, authJwt.isAdmin], programacionAthController.create);
+    router.post("/",[cpUpload,authJwt.verifyToken], programacionAthController.create);
   
     // Create a new cargo
-    router.post("/find",[cpUpload,authJwt.verifyToken, authJwt.isAdmin], programacionAthController.find);
+    router.post("/find",[cpUpload,authJwt.verifyToken], programacionAthController.find);
 
     // Create a new cargo
-     router.post("/programar",[cpUpload,authJwt.verifyToken, authJwt.isAdmin], programacionAthController.programar);
+     router.post("/programar",[cpUpload,authJwt.verifyToken], programacionAthController.programar);
+    
+     // Create a new cargo
+    router.post("/escalar",[cpUpload,authJwt.verifyToken], programacionAthController.escalar);
+
+    // Create a new cargo
+    router.post("/rechazar",[cpUpload,authJwt.verifyToken], programacionAthController.rechazar);
+
+    // Create a new cargo
+    router.post("/archivar",[cpUpload,authJwt.verifyToken], programacionAthController.archivar);
+
+   // Create a new cargo
+   router.post("/cerrar",[cpUpload,authJwt.verifyToken], programacionAthController.cerrar);
+
 
     // Retrieve all cargos
     router.get("/", programacionAthController.findAll);
   
     // Update  with id
-    router.put("/",[cpUpload,authJwt.verifyToken, authJwt.isAdmin], programacionAthController.update);
+    router.put("/",[cpUpload,authJwt.verifyToken], programacionAthController.update);
 
 
-    router.post("/delete",[cpUpload,authJwt.verifyToken, authJwt.isAdmin], programacionAthController.delete);
+    router.post("/delete",[cpUpload,authJwt.verifyToken], programacionAthController.delete);
   
     app.use("/api/programacion/ath", router);
   };

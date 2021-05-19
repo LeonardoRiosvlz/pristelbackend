@@ -47,6 +47,18 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
         margen: {
           type: DataTypes.STRING(20)
         },
+        motivo_escalado: {
+          type: DataTypes.STRING
+        },
+        motivo_rechazo: {
+          type: DataTypes.STRING
+        },   
+        motivo_archivado: {
+          type: DataTypes.STRING
+        },   
+        motivo_cierre: {
+          type: DataTypes.STRING
+        },  
         fecha_creacion: {
           allowNull: true,
           type: DataTypes.DATE
@@ -56,7 +68,7 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
             unique: false
         },
         status: {
-            type: DataTypes.ENUM('Creada','Programada','Archivada','Reprogramada','Escalada','Suspendida','Devuelta','Aceptada','Legalizada','Cumplida','En proceso','Vencida','Cerrada'),
+            type: DataTypes.ENUM('Creada','Programada','Archivada','Reprogramada','Escalada','Suspendida','Devuelta','Aceptada','Rechazada','Legalizada','Cumplida','En proceso','Vencida','Cerrada'),
             defaultValue: 'Creada',
             unique: false
         }, 

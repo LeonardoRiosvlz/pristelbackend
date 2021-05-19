@@ -9,26 +9,24 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
           autoIncrement: true,
           primaryKey: true
         },
-        tipo: {
-            type: DataTypes.ENUM('Realizada','Fallida'),
-            defaultValue: 'Realizada',
+        status: {
+            type: DataTypes.ENUM('Pendiente','Aceptada','Devuelta'),
+            defaultValue: 'Pendiente',
             unique: false
         },
         fecha: {
             allowNull: true,
             type: DataTypes.DATEONLY
         }, 
-        recibo: {
-            type: DataTypes.STRING(15)
-        },
+
         asunto: {
             type: DataTypes.STRING(100)
         },
         descripcion: {
             type: DataTypes.STRING(250)
         },
-        img_recibo: {
-            type: DataTypes.STRING(100)
+        observaciones_analista: {
+            type: DataTypes.TEXT 
         },
         observaciones: {
           type: DataTypes.TEXT 

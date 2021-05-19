@@ -38,12 +38,14 @@ db.formato = require("./formato.model.js")(sequelize, Sequelize, DataTypes);
 db.user = require("./user.model.js")(sequelize, Sequelize, DataTypes);
 db.permiso = require("./permiso.model.js")(sequelize, Sequelize, DataTypes);
 db.programacion_ath = require("./programacion_ath.model.js")(sequelize, Sequelize, DataTypes);
+db.legalizacionAth = require("./legalizaciones_ath.model.js")(sequelize, Sequelize, DataTypes);
 db.area = require("./area.model.js")(sequelize, Sequelize, DataTypes);
 db.gestionAth = require("./gestionAth.model.js")(sequelize, Sequelize, DataTypes);
 db.notificacion = require("./notificacion.model.js")(sequelize, Sequelize, DataTypes);
 db.conversacion = require("./conversacion.model.js")(sequelize, Sequelize, DataTypes);
 db.suscripciones = require("./suscripciones.model.js")(sequelize, Sequelize, DataTypes);
 db.mensajes = require("./mensajes.model.js")(sequelize, Sequelize, DataTypes);
+db.notas = require("./notas.model.js")(sequelize, Sequelize, DataTypes);
 db.imputaciones = require("./imputaciones.model.js")(sequelize, Sequelize, DataTypes);
 db.abonos = require("./abonos.model.js")(sequelize, Sequelize, DataTypes);
 db.regional = require("./regional.model.js")(sequelize, Sequelize, DataTypes); 
@@ -66,6 +68,11 @@ db.album.belongsTo(db.entidad, { foreignKey: 'entidad_id' });
 //imputaciones//
 db.entidad.hasMany(db.imputaciones, { foreignKey: 'id_entidad' });
 db.imputaciones.belongsTo(db.entidad, { foreignKey: 'id_entidad' });
+//notas//
+db.entidad.hasMany(db.notas, { foreignKey: 'entidad_id' });
+db.notas.belongsTo(db.entidad, { foreignKey: 'entidad_id' });
+db.user.hasMany(db.notas, { foreignKey: 'user_id' });
+db.notas.belongsTo(db.user, { foreignKey: 'user_id' });
 //formato// 
 db.user.hasMany(db.formato, { as: 'Tecnico', foreignKey: 'tecnico_id' });
 db.user.hasMany(db.formato, { as: 'Autorizador', foreignKey: 'autorizador_id' });
@@ -106,6 +113,8 @@ db.programacion_ath.belongsTo(db.user, { as: 'Coordinador', foreignKey: 'coordin
 
 db.programacion_ath.hasMany(db.gestionAth, { foreignKey: 'id_programacion' }); 
 db.gestionAth.belongsTo(db.programacion_ath, { foreignKey: 'id_programacion' }); 
+db.programacion_ath.hasMany(db.legalizacionAth, { foreignKey: 'id_programacion' }); 
+db.legalizacionAth.belongsTo(db.programacion_ath, { foreignKey: 'id_programacion' }); 
 //fin programcion //
 db.permiso.belongsTo(db.user, { foreignKey: 'uid' });
 db.permiso.belongsTo(db.entidad, { foreignKey: 'eid' });

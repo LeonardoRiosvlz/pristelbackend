@@ -194,6 +194,7 @@ exports.update = (req, res) => {
   body.apellido= req.body.apellido;
   body.sexo= req.body.sexo;
   body.telefono= req.body.telefono;
+  body.regional= req.body.regional;
   body.dependencia= req.dependencia;
   if(req.body.tipo_tecnico){
     body.tipo_tecnico= req.body.tipo_tecnico;

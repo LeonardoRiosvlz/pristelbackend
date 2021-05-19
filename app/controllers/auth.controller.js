@@ -31,6 +31,7 @@ exports.signup = (req, res) => {
     telefono: req.body.telefono,
     imagen: req.body.imagen,
     tipo: req.body.tipo,
+    tipo: req.body.regional,
     status: req.body.status,
     direccion: req.body.direccion,
     tipo_tecnico: req.body.tipo_tecnico,
@@ -73,6 +74,7 @@ exports.update = (req, res) => {
   body.codigo= req.body.codigo;
   body.telefono= req.body.telefono;
   body.tipo= req.body.tipo;
+  body.regional= req.body.regional;
   body.direccion= req.body.direccion;
   body.status= req.body.status;
   body.dependencia= req.body.dependencia;
