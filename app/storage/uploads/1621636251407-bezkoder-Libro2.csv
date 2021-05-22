@@ -1,0 +1,520 @@
+﻿item;descripcion;medida;precio
+1;Balasto;Unidad;51577.50 
+2;Bala Halógena;Unidad;9024.59 
+3;Bala De Riel;Unidad;20631.00 
+4;Base De Fotocelda;Unidad;12250.10 
+5;Fotocelda Completa;Unidad;51577.50 
+6;Esquinero Parte Superior Para Puertas De Ingreso Al Site Externo;Unidad;51577.50 
+7;Manija Vertical;Unidad;167626.30 
+8;Transformador Dicroico;Unidad;16762.98 
+9;Toma Levinton;Unidad;22565.60 
+10;Bloque Inferior y/o Superior De Puerta;Unidad;82008.82 
+11;220;Unidad;180306.70 
+12;Aislador De Aluminio Para Vidrios;Unidad;21187.45 
+13;Roseta;Unidad;3869.20 
+14;Lámpara 2 X 48 W;Unidad;93871.06 
+15;Lámpara 30 X 30;Unidad;109601.31 
+16;Lámpara 17W;Unidad;58024.99 
+17;Lámpara Tortuga;Unidad;46813.51 
+18;Lámpara Redonda Economizadora;Unidad;91009.83 
+19;Sum E Inst Temporizador;Unidad;283675.09 
+20;Transformador. Regulador. Polo A Tierra;Unidad;876816.38 
+21;"Extractor De 4 """;Unidad;122496.28 
+22;Salida Eléctrica;Unidad;30946.50 
+23;Suministro E Instalación Del Sandblasting ;Unidad;99444.96 
+24;Acometida 2 X 14 Dúplex;Metro Lineal;3467.19 
+25;Acometida Duplex 3 X 14;Metro Lineal;3467.19 
+26;Acometida Bifásica 4 X 10 Con Regata Cable 10;Metro Lineal;29116.83 
+27;Acometida Encauchado 3 X 10;Metro Lineal;23500.48 
+28;Acometida Encauchetado 2 X 14;Metro Lineal;9012.80 
+29;Acometida Encauchetado 2 X 16;Metro Lineal;8595.46 
+30;Adecuación Extractor;Unidad;499137.02 
+31;Aislamiento De Lamina (Con Silicona Hasta 2 Ml);Unidad;138459.96 
+32;Alambre # 12;Metro Lineal;3051.03 
+33;Amaestramiento De Cerradura Yale;Unidad;45667.61 
+34;Arreglo Puerta Metálica;Unidad;110919.34 
+35;Aseo Jornada Diaria Bus Móvil 1 Día;Día;100698.15 
+36;Automático Enchufable;Unidad;20104.03 
+37;Bala De 20 W;Unidad;83190.09 
+38;Base Pintura Lamina M2;Metro Cuadrado (m2);31889.63 
+39;Brazo Hidráulico;Unidad;314681.72 
+40;Cable #12 Entorchado ;Metro Lineal;9428.96 
+41;Cable Desnudo No 12 Para Polo A Tierra ;Metro Lineal;10814.18 
+42;Cambio Toma De Normal A Regulada;Unidad;24956.44 
+43;Canaleta Plástica ;Metro Lineal;11092.41 
+44;Candados;Unidad;97859.32 
+45;Cerradura Mariposa;Unidad;100247.80 
+46;Cerradura Pomo;Unidad;84812.28 
+47;Cerradura Yale 170 Chapas Zócalo;Unidad;195719.83 
+48;Contactor;Unidad;133662.95 
+49;Contramanija;Unidad;106992.37 
+50;Copia Llaves Convencionales;Unidad;6294.22 
+51;Desmonte Aviso;Unidad;83190.09 
+52;Empaque De Zócalo;Metro Lineal;9786.17 
+53;Acometida Encauchetado 3X12 Homologado;Metro Lineal;14419.30 
+54;Extracción De Antena Y Reubicación De La Misma (Incluye Perforacion);Unidad;143528.11 
+55;"Extractor De 6""";Unidad;456678.42 
+56;Fotocelda Sin  Base;Unidad;41594.46 
+57;Guardaescobas;Metro Lineal;84812.28 
+58;Impermeabilización Y Suministro De Tela Asfáltica (Hasta 4 Metros);Unidad;1195790.53 
+59;Instalación Aviso;Unidad;83190.09 
+60;Instalación De Perfil Metálico Vertical Fachada En Aluminio;Unidad;234860.96 
+61;Interruptor Doble;Unidad;20797.23 
+62;Lámpara De 2 X 32;Unidad;150771.36 
+63;Lámpara De 60 X 60 Especular;Unidad;240594.02 
+64;Lámpara Reflectora;Unidad;100247.80 
+65;Multitoma;Unidad;69230.57 
+66;Instalación De Papelera En Vidrio;Unidad;56643.30 
+67;Perforación Y Ajuste De Pasador En Puerta Site Supervisor;Unidad;100698.15 
+68;Pintura Lamina;Metro Cuadrado (m2);44368.44 
+69;Pintura Perfilería En Aluminio;Unidad;195719.83 
+70;Pintura Zócalo;Unidad;62936.34 
+71;Porta Chapa;Unidad;94405.10 
+72;Regulador De 2 Kva;Unidad;242635.90 
+73;Rejilla Plástica Ducto Aire Acondicionado;Unidad;151047.22 
+74;Restauración De Papelera Y/O Pintura;Unidad;32619.38 
+75;Suministro E Instalación De Ojo Mágico;Unidad;23570.04 
+76;Suministro E Instalación De Zócalo Puerta De Vidrio Templado;Unidad;187175.06 
+77;Suministro E Instalación Manija Cromada ;Unidad;25954.98 
+78;Suministro E Instalación Pivote Puerta;Unidad;58925.68 
+79;Suministro Techo Antibandalico;Metro Cuadrado (m2);485271.81 
+80;Taco De 20 Amperios;Unidad;18717.62 
+81;Taco Pacha 2X30 Amperios ;Unidad;47141.25 
+82;Tapa Bisagra;Unidad;57474.43 
+83;Toma Encauchetado Pequeña ;Unidad;6656.15 
+84;Toma Naranja Regulada;Unidad;37186.50 
+85;Tope Puerta;Unidad;24464.83 
+86;Tubo Lámpara De 32;Unidad;71764.05 
+87;Varilla Polo A Tierra (Cobre);Unidad;166379.01 
+88;Pintura De Muros En Vinilo Viniltex A 2 Manos;Metro Cuadrado (m2);31118.62 
+89;Pintura De Muros De Fachadas En Coraza;Metro Cuadrado (m2);34229.78 
+90;Impermeabilización Y Resane De Pared (Sin Intervención De Estructura);Metro Cuadrado (m2);61357.78 
+91;Impermeabilización Y Resane De Paneles Metálicos (Sin Intervención De Estructura);Metro Cuadrado (m2);68459.56 
+92;Lamina Galvanizada Para Ranura De Puerta;Unidad;113285.42 
+93;Polisombra - Desinstalación;Unidad;101957.23 
+94;Protector De Vidrio Para Las Lámparas Redondas ;Unidad;23578.29 
+95;Papelera;Unidad;74692.45 
+96;Bisagra Speedy Por 100 Libras Mas Bloque Inferior De Puerta;Unidad;436198.32 
+97;Lampara Redonda Led De 18W;Unidad;78482.81 
+98;Mantenimiento Aviso Cajero (Incluye Ajuste Y Limpieza General De Aviso Y Panaflex) No Incluye Repuestos Electricos);Metro Lineal;99028.81 
+99;Sum E Inst Lamina Cielo Raso Usg - Lamina De Fibra Mineral;Unidad;60476.36 
+100;Sum E Inst Caja Fuerte Digital Marca Yale  De 35X25X25;Unidad;521509.35 
+101;Sum E Inst Caja Fuerte Digital Marca Yale  De 43X35X20;Unidad;666435.00 
+102;Suministro E Instalación Manija Interzocalaria En Tubo De Acero Inoxidable De 2´ 0 1´ Y 3/4 Por 1/8 ;Unidad;396115.23 
+103;Resanes Hasta 1.8 Mts De Altura Resane Con Estuco Plástico;Metro Cuadrado (m2);10070.10 
+104;Revision Electrica;Unidad;56642.71 
+105;Organización Cableado Con Abrazadera (Hasta 3 Metros);Global;56642.71 
+106;Sum  E Inst  De Tubos Fluorescente De 32 W;Unidad;13377.75 
+107;Clavijas ;Unidad;7552.36 
+108;Limpieza Lámparas ;Unidad;15104.72 
+109;Programación Temporizador;Unidad;50349.07 
+110;Sum E Inst Bombillo Ahorrador Silvania O Philips ;Unidad;25042.37 
+111;Sum E Inst Lámpara Ojo De Buey Ahorradora;Unidad;68953.06 
+112;Conexión Eléctrica Aviso Luminoso;Unidad;56642.71 
+113;Limpieza Extractores;Unidad;22657.08 
+114;Caja 2400;Unidad;11328.54 
+115;Sum E Inst Interruptor Sencillo;Unidad;22657.08 
+116;Sum E Inst Regulador Stars Electronic De 2 Kva;Unidad;365463.45 
+117;Sum E Inst Regulador Stars Electronic De 2.5 Kva;Unidad;447987.46 
+118;Revision De Voltajes ;Unidad;75523.61 
+119;Desmonte Y Reinstalacion De Puerta Para Reparacion Del Bloque .Pivote.Empaques Y Manijas Intersocalarias;Unidad;75523.61 
+120;Desmonte De Manija Puerta Site Supervisor;Unidad;22657.08 
+121;Sum E Inst Tope Puerta Parte Superior;Unidad;50349.07 
+122;Arreglo Hueco Bisagra;Unidad;44055.44 
+123;Ajuste Tapa Bisagra Cambio De Tornilleria;Unidad;37761.81 
+124;Desmonte Manija Oreja De Elefante;Unidad;33041.58 
+125;Instalación Manija;Unidad;28950.72 
+126;Ajuste De Manija;Unidad;22657.08 
+127;Resane. Estuco Y Pintura De Muro Fachada De 200 X 2.50 (Incluye Pelada De Muro. Resane. Estuco Y Pintura);Global;314681.72 
+128;Ajuste De Esquinero;Unidad;25174.54 
+129;Ajuste De Zocalo Inferior Y/O Superior;Unidad;25174.54 
+130;Ajuste De Pivote;Unidad;25174.54 
+131;Arreglo De Cerradura ;Unidad;31468.17 
+132;Desmonte De Cerradura Convencional;Unidad;33041.58 
+133;Apertura Cerradura Yale O Slage;Unidad;39018.44 
+134;Desmonte De Cerraduras De Seguridad;Unidad;167221.90 
+135;Mantenimiento Cerradura;Unidad;31468.17 
+136;Sum E Ins Cantonera Cerradura Mariposa;Unidad;31468.17 
+137;Sum E Inst Cerradura Tipo Guantera;Unidad;31468.17 
+138;Sum E Inst Porta-Cerradura Con Recibidor En Aluminio;Unidad;467239.42 
+139;Pintura De Reja;Metro Cuadrado (m2);151047.22 
+140;Pintura Fascia;Unidad;226570.84 
+141;Desmonte Y Reinstalacion De Cielo Raso Antibandalico Hasta 10 Laminas;Global;289507.18 
+142;Ajuste De Cielo Raso Antivandalico Con Cambio De Tornilleria (Hasta 5 Laminas);Global;132166.32 
+143;Limpieza General Site Supervisor. Limpieza De Maquinas Paredes Y Equipos;Unidad;27870.32 
+144;Reinstalación Repisa;Unidad;56642.71 
+145;Instalaciòn Guardaescoba En Ceramica;Metro Lineal;100698.15 
+146;Encerramiento Con Laminas De Drywall;Unidad;163634.49 
+147;Reasegurada Parte Lateral Aviso Luminoso;Unidad;56642.71 
+148;Instalación Papelera (No Incluye  Suministro);Unidad;30946.50 
+149;Instalación Señalización Acrilica Fascia Cajero;Global;18567.90 
+150;Desmonte Manijas Interzocalarias  E Instalacion De Las Misma Con Reasegurada;Unidad;86650.21 
+151;Arreglo Puerta Caida;Unidad;74024.03 
+152;Graduación Bisagra Hidraulica Marca Speedy;Unidad;30946.50 
+153;Reasegurada Manija Oreja De Elfante Y Cerradura;Unidad;28470.78 
+154;Sum E Inst Bombillo Ahorrador De 30 W Silvania Philips O General;Unidad;47688.56 
+155;Sum E Inst Dicroico Silvania O Philips;Unidad;10363.36 
+156;Sum E Inst Socket Silvania O Philips;Unidad;3094.65 
+157;Sum E Inst Toma Levington Naranja Regulada;Unidad;55703.70 
+158;Sum E Inst Interruptor Doble Luminex;Unidad;30946.50 
+159;Limpieza Canales Y Bajantes - Vigacanal;Unidad;111407.41 
+160;Sum E Inst Esquinero Muro;Unidad;14854.32 
+161;Extraccion Llave Trabada ;Unidad;27870.32 
+162;Mantenimiento Cerraduras Guanteras (Lubricacion. Ajuste);Unidad;39018.44 
+163;Sum E Inst Reflector 10 W (Con Brazo Hasta 1 Mts);Unidad;278703.16 
+164;Limpieza De Cabina;Unidad;226570.84 
+165;Bisagras Para Marco;Unidad;10300.87 
+166;Caja De Paso Mt 4X2;Unidad;3433.62 
+167;Impermeabilización Con Sikaflex M2;Metro Cuadrado (m2);51504.34 
+168;Lámpara De 20 X20;Unidad;41693.99 
+169;Lámpara Rectangular Led De 18W ;Unidad;257521.72 
+170;Cinta Antideslizante;Metro Lineal;29431.05 
+171;Panel Led 6 W;Unidad;26978.47 
+172;Sellamiento Toma Electrica Con Tapa Ciega ;Unidad;1348.92 
+173;Sum E Inst Lampara Led 1X24 ;Unidad;63767.28 
+174;Suministro E Instalación De Bombillo Led De Alta Potencia;Unidad;22073.29 
+175;Suministro E Instalación De Techo En Fiberglass;Unidad;58371.59 
+176;Suminsitro E Instalacion De Dicroico Led Completo;Unidad;18394.41 
+177;Sandblasting Polarizado;Unidad;122629.39 
+178;Panel Led Cuadrado De 60*60;Unidad;183944.09 
+179;Panel Led Redondo De 25 W;Unidad;78482.81 
+180;Panel Led Redondo De 12 W;Unidad;51504.34 
+181;Panel Led Redondo De 9 W;Unidad;34336.23 
+182;Panel Led Redonde De 3 W;Unidad;19130.18 
+183;Retiro De Escombros;Hasta 2 Lonas ;122629.39 
+184;Reja Metalica Con Anclajes Para Lampara;Según Cotización ; Según Cotización  
+185;Envío de insumos;Según Cotización ; Según Cotización  
+186;Mesa Para Ups En Lamina;Unidad;367888.17 
+187;Mesa Para Ups En Madera;Unidad;404676.99 
+188;Mantenimiento Aviso Cajero (Incluye Ajuste Y Limpieza General De Aviso. Panaflex Y Parte Electrica);Metro Lineal;178370.02 
+189;Transporte De Puertas En Vidrio Templado Calibre 10Mm;Unidad;226570.84 
+190;Soldadura De Bisagra Puerta Metalica Ingreso A La Oficina Incluye (Desmonte De Bisagras. Sum E Inst Pines Bisagras. Soldadura De Bisagras A Puerta. Instalacion Puerta);Global;692299.78 
+191;Apertura De Reja Metalica;Unidad;85593.43 
+192;Bala Con Ahorrador;Unidad;14547.80 
+193;Manijas Metálicas;Unidad;90261.22 
+194;Acometida Encauchetado 3 X 14;Metro Lineal;6933.20 
+195;Acrílico De Lámpara Led;Unidad;58715.83 
+196;Acrílico Ena;Unidad;44056.03 
+197;Acrílico Grande;Unidad;84812.28 
+198;Acrílico Pequeño;Unidad;58715.83 
+199;Ajuste De Panaflex;Unidad;251745.37 
+200;Anclaje Cabina ;Unidad;160396.02 
+201;Anclaje Cajero;Unidad;106931.07 
+202;Angulo Metálico;Unidad;10070.29 
+203;Aplique De Acero Inoxidable;Unidad;56643.30 
+204;Arreglo De Fachada Y Marco De Aluminio;Unidad;113285.42 
+205;Aviso Luminoso M2;Metro Cuadrado (m2);443676.17 
+206;Base Para Sistema Retráctil Anclaje Y Desanclaje;Unidad;658837.47 
+207;Cable Passcord;Unidad;44056.03 
+208;Calibración Aire Neumáticos Cajero Móvil (4 Llantas);Unidad;202881.73 
+209;Candado Pequeño Para Reja En Site Supervisor;Unidad;58715.83 
+210;Caperuza Mdf;Unidad;566427.09 
+211;Cerradura Cilíndrica;Unidad;37761.81 
+212;Cerradura Media Luna;Unidad;31468.76 
+213;Cerradura Pico De Loro;Unidad;226570.84 
+214;Cerradura Tipo Gancho;Unidad;75523.61 
+215;Cerradura Yale Tipo Mariposa;Unidad;195719.83 
+216;Clavija Metálica;Unidad;31468.76 
+217;Conexión Cajero Móvil;Unidad;69324.88 
+218;Conexión Eléctrica Cajero;Unidad;106931.07 
+219;Desanclaje Cabina;Unidad;133662.95 
+220;Desanclaje Cajero;Unidad;80198.01 
+221;Desarme Cabina;Unidad;347525.09 
+222;Desconexión Cajero Móvil;Unidad;41594.46 
+223;Desconexión Eléctrica Cajero;Unidad;80198.01 
+224;Desinstalación Antena Parabólica Pequeña;Unidad;151047.22 
+225;Desplazamiento Cajero;Unidad;53464.95 
+226;Extensión De 5 Metros;Unidad;31468.76 
+227;Fabricación Dintel Inferior;Metro Lineal;163634.49 
+228;Fabricación Franjas Cajero Automático;Unidad;35229.50 
+229;Fabricación Franjas Continuas;Unidad;35229.50 
+230;Fabricación Hale Y Empuje;Unidad;3776.06 
+231;Fabricación Manijas Sintética;Unidad;52174.03 
+232;Imanes Puerta Site Supervisor;Unidad;58153.49 
+233;Instalación De Platina En L Para Asegurar Lamina De Cabina;Unidad;81817.84 
+234;Lamina En Acrílico De Cielo Raso Grande;Unidad;84812.28 
+235;Lamina En Acrílico De Cielo Raso Pequeña;Unidad;58715.83 
+236;Lamina Galvanizada (Caperuza Para Restaurar Panel Parte Inferior);Unidad;226570.84 
+237;Lamina Galvanizada Calibre 16 (Parte Superior Cabina Villas);Unidad;314681.72 
+238;Lámpara  Tortuga Y Rejilla Antivandalica Grande;Unidad;128630.17 
+239;Lámpara De 48 Y Un Balasto;Unidad;145448.56 
+240;Lámpara Economizadora;Unidad;91009.83 
+241;Lámpara Especular;Unidad;281854.85 
+242;Lámpara Led;Unidad;143528.11 
+243;Lámpara Luminari 2 X 32;Unidad;195719.83 
+244;Lámparas Redondas Led;Unidad;201396.30 
+245;Lavado Bus Móvil;Unidad;169623.38 
+246;Mantenimiento Sistema Retráctil;Unidad;206790.36 
+247;Maquinado Zócalo;Unidad;100698.15 
+248;Marco Metálico Para Cielo Raso;Metro Lineal;75523.61 
+249;Pasador Metálico;Unidad;33416.33 
+250;Película Polarizada En Acrílico Fascia;Unidad;69230.57 
+251;Perfil En Aluminio Superior Puerta;Unidad;62936.34 
+252;Pintura De Barandas Remolque ;Unidad;195719.83 
+253;Pintura Manija Vertical;Unidad;50349.07 
+254;Pintura Teclado;Unidad;91335.21 
+255;Pisa Vidrios;Metro Lineal;18881.49 
+256;Platina Para Cantonera;Unidad;75523.61 
+257;Protector De Lámpara Led;Unidad;50349.07 
+258;Reseteo De Ups;Unidad;100698.15 
+259;Recibidor De Pasador;Unidad;94405.10 
+260;Reconstrucción De Polea De Aluminio Para Retráctil;Unidad;50349.07 
+261;Rejilla Anti Vandálica Para Ahorrador;Unidad;32619.38 
+262;Rejilla Antiandalica Para Caja De Electricidad;Unidad;276919.91 
+263;Rejilla Antivandalica Para Lámpara Tortuga;Unidad;56643.30 
+264;Reparación Y Mantenimiento De Sistema Retráctil Con Instalación De Ángulos Para Asegurar Cadena;Unidad;402792.60 
+265;Reparación De Sistema Retráctil. Suministro De Platinas Y Soldadura;Unidad;566427.09 
+266;Reparación Flauta En Fachada Flotante E Instalación De Puerta;Unidad;226570.84 
+267;Retiro Punto Eléctrico;Unidad;75523.61 
+268;Retiro Retablo Banco Popular Traslado;Unidad;163634.49 
+269;Soldadura De Puerta. Incluye Pintura Completa Puerta;Unidad;440554.41 
+270;Soldadura Para Pasador En Anclaje;Unidad;188809.03 
+271;Soldadura Y Bisagra Puerta Supervisor. Incluye Pintura Completa;Unidad;302094.45 
+272;Soporte En U;Unidad;65239.94 
+273;Suministro De Escalera Para Bodega Ath Mediana;Unidad;440554.41 
+274;Suministro E Instalación De Aluminio Para Vidrios;Metro Cuadrado (m2);22183.63 
+275;Tapas De Zócalo;Unidad;37761.81 
+276;Temporizador Led;Unidad;195719.83 
+277;Toma Corriente;Unidad;18881.49 
+278;Tubo Para Lámpara 2X32;Unidad;71764.05 
+279;Validación Anclajes;Unidad;31468.76 
+280;Tapon En L Para Ajustar Cables E Impedir Acceso A Roedores;Unidad;41262.00 
+281;Estudio De Local Ciudad Principal Bogota;Unidad;75523.61 
+282;Estudio De Local Ciudad Principal (Barranquilla. Bucaramanga. Cali Y Medellin);Unidad;132166.91 
+283;Estudio De Local Ciudad Alterna (Hasta 3 Horas);Unidad;220277.79 
+284;Estudio De Local Ciudad Lejana (Mas De 3 Horas);Unidad;295801.40 
+285;Fabricacion De Polisombra;Unidad;188809.03 
+286;Instalacion De Polisombra;Unidad;113285.42 
+287;Fabricacion De Aviso Publicitario Banco De Occidente (Informativo Tamaño Carta Laminado Marchas 1 De Mayo);Unidad;31468.76 
+288;Temporizador De Riel;Unidad;551731.93 
+289;Kit De Limpieza Para Lectora;Unidad;8134.51 
+290;Breaker De 30 Amperios Tipo Riel ;Unidad;53051.15 
+291;Acrílico Hablador ;Unidad;44054.85 
+292;Desinflar Neumáticos Cajero Móvil;Unidad;188809.03 
+293;Alquiler De 1 Cuerpo De Andamio Certificado Sin Transporte;Unidad;70734.86 
+294;Sum E Ins Guia Para Mejor Desplazamiento Del Sistema Retractil;Global;171816.16 
+295;Desmonte. Instalación Y Reparación Sistema Retractil Con Soldaduras Especiales;Global;594748.15 
+296;Reparación Sistema Retractil (S I De Dos Uiniones Cadena Con Sus Respectivos Eslabones Recorte De Guia Protectora De Cadena Metalica Y Anclaje Ajuste De Piñoneria;Global;290766.26 
+297;Desinstalación Sistema Retractil Para Reconstruir Cremallera;Global;225762.10 
+298;Desmonte. Instalación Y Reparacion Sistema Retractil Con Soldaduras. Instalación Guias;Global;660192.05 
+299;Reasegurada Sistema Retractil;Global;202655.38 
+300;Sum E Inst Piñones;Unidad;94313.15 
+301;Sum E Inst Ejes;Unidad;129680.58 
+302;Sum E InstCadena;Unidad;200415.44 
+303;Sum E Inst Chumacera;Unidad;330096.02 
+304;Sum E Inst Pasador Pequeño;Unidad;64840.29 
+305;Sum E Inst Pasador Grande;Unidad;106102.29 
+306;Sum E Inst Rieles;Unidad;530511.47 
+307;Desmonte Sistema Retractil Para  Instalación De Repuestos;Unidad;153258.87 
+308;Ventilador;Unidad;312147.54 
+309;Lámpara De 2 X 18;Unidad;150771.72 
+310;Soldadura Puerta Cabina;Unidad;312147.54 
+311;Desinstalación De Antena De Raven;Unidad;78036.89 
+312;Soporto Metalico Para Camara;Unidad;211814.40 
+313;Suministro Reja Bancaria En Varilla 10Mm Y Pintura Al Duco Color Institucional;Metro Cuadrado (m2);167111.11 
+314;Instalacion Cajas Fuertes En Muro;Unidad;72462.82 
+315;Sum E Inst Caja Fuerte Digital Marca Karson  De 35X25X25;Unidad;225392.82 
+316;Sum E Inst Caja Fuerte Digital Marca Fixser De 50X36X33;Unidad;842575.40 
+317;Sum E Inst Manija En Aluminio Para La Puerta De Vidrio 80 Cm;Unidad;147155.27 
+318;Fabricación Aviso Luminoso En Panaflex (Perfileria Aluminio Con Bota Goteras Y Esquinero Cantonera Marca Lukaso Con Panaflex 10.11.12.13.14 Onzas 4 Años) ;Metro Cuadrado (m2);470386.83 
+319;Suministro Protector De Teclado Diebold Opteva En Material De Alta Resistencia. Incluye Sensor. Modificación De Altura Lateral Para Evitar Skimmer En La Lectora: Color Semiclaro Incluye 4 Tornillos 2 Epoxicas Mejora Interna De Aletas Para Evitar Trampas Internas Este insumo se maneja como excepción y siempre y cuando el proveedor que ATH tiene contratado suministre el insumo y sostenga el precio a Pristel;Unidad;161928.00 
+320;Sum E Inst Bombillo Tipo Led De 5 Watios;Unidad;14715.53 
+321;Lámpara Led Fascia;Unidad;143527.67 
+322;Señalizacion Policarbonatos;Unidad;151047.08 
+323;Cambio De Pisos Mano De Obra Sin Material;Metro Lineal;44055.44 
+324;Cambio De Pisos Incluye Demolición. Botada De Escombros Y Suministros E Instalación De Piso Porcelanato Esmaltado 60*60;Metro Cuadrado (m2);176221.76 
+325;Instalacion De Cable De Red ;Unidad;100698.15 
+326;Suministro Cable De Poder ;Unidad;75523.61 
+327;Acometida Duplex 2 X 16;Metro Lineal;5016.66 
+328;Sum E Inst Cable Conexión Ups;Unidad;35244.35 
+329;Certificacion Cableado;Unidad;100698.15 
+330;Sum  E Inst  De Tubos De 54 Watios;Unidad;14492.56 
+331;Sum E Inst Tubos 39;Unidad;10699.18 
+332;Sum E Inst Tubos 48 ;Unidad;10699.18 
+333;Sum E Inst Tubos Curvos De 32;Unidad;49090.35 
+334;Certificacion De Puntos ;Unidad;100698.15 
+335;Lámpara T8 De 32 W ;Unidad;139351.58 
+336;Sum  E Inst De Patch Cord Categoria 6 ;Unidad;50349.07 
+337;Sum E Inst Bombillos Pl 13 ;Unidad;10699.18 
+338;Sum E Inst Juego Toma Y Clavija;Unidad;17622.18 
+339;Sum E Inst Roceta;Unidad;10699.18 
+340;Alambre No 10;Metro Lineal;3901.84 
+341;Desmonte Lámparas Existentes;Unidad;31468.17 
+342;Sum E Inst De Lámparas Tipo Led;Unidad;161117.04 
+343;Lámpara Redonda Dulux;Unidad;97171.20 
+344;Traslado De Circuitos Aire Acondicionado De Tablero De Transferencia A Tablero De Red;Global;276919.91 
+345;Instalación Lámparas Existentes;Unidad;35244.35 
+346;Mantenimiento Acrilicos Lámparas (Incluye Desmonte. Limpieza General E Instalación Del Mismo) Hasta 10 Laminas;Global;113285.42 
+347;Sum E Ins Agarraderas Plasticas De 1 A 10;Global;18880.90 
+348;Tubo Led 18 W;Unidad;31468.17 
+349;Sum E Ins Breaker De 25 Amp;Unidad;40279.26 
+350;Sum E Inst De Lámparas Redondas Tipo Led;Unidad;306517.74 
+351;Sum E Inst Lámpara 2 X 14 W  ;Unidad;94842.55 
+352;Revisión Ups;Unidad;88110.88 
+353;Ajuste De Perfileria De Puerta ;Unidad;31468.17 
+354;Arreglo De Chapeta Superior De La Puerta ;Unidad;56642.71 
+355;Reparacion Bloque  ( No Incluye Desmonte Ni Reinstalacion De Puerta );Unidad;56642.71 
+356;Arreglo Puerta Site Supervisor Con Instalación De 2 Metros De Empaque Para Mejor Sellamiento;Unidad;100698.15 
+357;Reparacion Pasador;Unidad;31468.17 
+358;Base En Acero Para Brazo Hidraulico;Unidad;106991.78 
+359;Perforación Para Instalación De Pasador;Unidad;31468.17 
+360;Pintura General Estructura En Aluminio Puerta  Con Base Y Laca Pintuco El Modo De Aplicación Es Al Duco;Global;125872.69 
+361;Soldadura Dos De Bisagras Tubulares;Unidad;314681.72 
+362;Sum E Inst Bisagra Speddy De 200  Libras;Unidad;981806.96 
+363;Sum E Inst Manija Marca Vera;Unidad;44055.44 
+364;Ajuste De Perfileria De La Fachada;Unidad;56642.71 
+365;Arreglo De Fachada En Aluminio;Unidad;150499.71 
+366;Reasegurada De Fachada (Parte Superior);Unidad;94404.52 
+367;Pintura Perfileria En Aluminio Fachada;Unidad;208970.06 
+368;Desmonte E Instalacion De Vidrio De Fachada De 110 X 350 Por Personal Especializado En Horario Nocturno Acompañamiento Desmonte De Publicidad;Global;541252.56 
+369;Retiro De Topes (Hasta 6 Unidades);Global;31468.17 
+370;Ajuste De Topes;Unidad;31468.17 
+371;Sum E Inst Pisavidrios En Aluminio;Unidad;81817.25 
+372;Instalación Cerradura;Unidad;28950.72 
+373;Sumininistro Cerradura Slage;Unidad;195719.44 
+374;Arreglo Cantonera Con Ajuste Tornilleria;Unidad;31468.17 
+375;Obra Civil: Desmonte De Lamina. Limpieza General Del Site. Sellamiento Baño (Retiro Inodoro. Sellamiento Con Cemento) Instalacion Lamina Con Soldadura Y Pintura;Global;528665.29 
+376;Pintura Cielo Raso Antivandalico Hasta 10 Laminas;Global;213983.57 
+377;Pintura Soporte Separadores En Laca;Unidad;44055.44 
+378;Desmonte Cielo Raso (Hasta 10 Laminas);Global;100698.15 
+379;Suministro E Instalación Perfileria En Aluminio Cielo Raso;Metro Lineal;27870.32 
+380;Desmonte Cielo Raso Hasta 10 Laminas;Global;113285.42 
+381;Ajuste Separador Con Silicona;Unidad;56642.71 
+382;Desmonte E Instalación Separador En Vidrio;Unidad;31468.17 
+383;Inspección Filtración Agua En Placa (Trabajo En Alturas);Metro Cuadrado (m2);100698.15 
+384;Sum E Inst Platina Camara;Unidad;37761.81 
+385;Inspección Filtraciones De Agua;Metro Cuadrado (m2);36503.08 
+386;Validacion Anclajes;Unidad;56642.71 
+387;Suministro Perfiles Verticales En Acero Inoxidable Para Soportar Peso Separador;Unidad;100698.15 
+388;Ajuste De Baranda (De 1 Metro) Con Cambio De Tornilleria ;Global;96921.97 
+389;Desmoste Y Reinstalacion De  Panel Superior E Inferior  Atm;Unidad;447987.46 
+390;Sum E Inst Papelera  En Lamina Cold Roll Calibre 18 Con Pintura Electrostática Color Institucional;Unidad;111407.41 
+391;Sum E Inst Papelera  En Acero Inoxidable Calibre 18;Unidad;210436.22 
+392;Sum E Inst Repisa Metalica Para Equipos De 40 X 70 En Lamina Cold Roll Cal 18 Pintura Electrostatica Color Institucional;Unidad;185679.01 
+393;Sum E Inst Extractor 4´  Monofasico A 110 V 7 W Caudal M3 -Hora 290 Incluye Instalación Electrica Para Cajero Toper;Unidad;148543.21 
+394;Suministro Reja Bancaria En Varilla 10Mm Y Pintura Al Duco Color Institucional;Metro Cuadrado (m2);167111.11 
+395;Sum E Inst Cantonera Electrica De 110 V Marca Gato O Dorgas;Unidad;92839.51 
+396;"Sum E Inst Manija Vertical En ""U"" De Aluminio";Unidad;142353.91 
+397;Instalacion Bisagra Hidraulica Marca Speedy;Unidad;136164.61 
+398;Sum E Inst Balasto  2 X 48 Silvania Philips O General;Unidad;54012.67 
+399;Sum E Inst Balasto 2 X 96 Silvania Philips O General;Unidad;51816.82 
+400;Sum E Inst Balasto 2  X 17  T-8 Silvania Philips O General;Unidad;66621.63 
+401;Sum E Inst Balasto De 20 Silvania Philips O General;Unidad;18567.90 
+402;Sum E Inst Balasto Ahorrador De 2 X 32  T-8 Silvania Philips O General;Unidad;81426.44 
+403;Sum E Inst Balasto Ahorrador De 4 X 32  T-8 Silvania Philips O General;Unidad;88828.84 
+404;Sum E Inst Balasto  40 W Silvania Philips O General;Unidad;48855.86 
+405;Sum E Inst Balasto Electronico 2X32 Silvania Philips O General;Unidad;88828.84 
+406;Sum E Inst Tubo Slim De 48  Silvania Philips O General;Unidad;8665.02 
+407;Sum E Inst Tubo Slim De 96 Silvania O Philips ;Unidad;13324.33 
+408;Sum E Inst Tubo Ahorrador 17W / 13W Silvania O Philips ;Unidad;13377.75 
+409;Sum E Inst Tubo Ahorrador De 32W  T8 Silvania O Philips;Unidad;10363.36 
+410;Sum E Inst Tubo De 40W Silvania Philips O General;Unidad;7829.47 
+411;Sum E Inst Tubo De 36W Silvania Philips O General;Unidad;7829.47 
+412;Sum E Inst Tubo En U De 30 W Silvania Philips O General;Unidad;35588.48 
+413;Sum E Inst Tubo De 15 W Silvania Philips O General;Unidad;9324.18 
+414;Sum E Inst Bala De 20 W Con Ahorrador;Unidad;88971.19 
+415;Salida Electrica;Unidad;43325.10 
+416;Sum E Inst Pilas Para Temporizador Energizer;Unidad;8142.64 
+417;Sum E Inst Roseta Corona;Unidad;4951.44 
+418;Sum E Inst Varilla Polo A Tierra Coper Well Cobre Cobre;Unidad;206240.34 
+419;Sum E Inst Cable # 12 Centelsa;Metro Lineal;12131.03 
+420;Sum E Inst Transformador De Aislamiento Polo A Tierra  2 Kva Marca Erco;Unidad;1956496.19 
+421;Sum E Inst Encauchetado 3X12 Homologado Centelsa;Metro Lineal;14606.75 
+422;Sum E Inst Clavija Trabada 110 V;Unidad;12131.03 
+423;Sum E Inst Halogeno Para Reflector;Unidad;29089.71 
+424;Sum E Inst Halogeno Para Reflector De 500 W ;Unidad;117596.71 
+425;Sum E Inst Taco Pacha 2X30 Amperio General O Legrand ;Unidad;68082.30 
+426;Sum E Ins Toma Encauchetada Polo A Tierra Codelca;Unidad;8665.02 
+427;Instalación De Tableta En Piso (No Incluye Suministro) Con Pegacord Marca Corona);Metro Cuadrado (m2);43325.10 
+428;Instalación De Enchape En Muros (No Incluye Suministro) Con Pegacord Marca Corona);Metro Cuadrado (m2);43325.10 
+429;Sum E InstPlaca En Acrilico Y Señalizacion Para Puertas De Baños Tamaño 15X15Cm;Unidad;46822.13 
+430;Sum E Inst Cerradura R4 Pomo Bola;Unidad;83610.95 
+431;Sum E Inst Pasador Falleba ;Unidad;50166.57 
+432;Sum E Inst Cadena Plastica Eslabonada Negra 6 Mt;Unidad;16722.19 
+433;Sum Soporte De Pared Para Extintor;Unidad;6131.47 
+434;Instalacion Soporte De Pared Para Extintor 2 Puntos Diferentes;Unidad;50166.57 
+435;Sum E Inst 4 Postes En Hierro Anclados Al Piso Pintados De 2´. 18 Metros De Cadena Para Realizar Cerramiento Parqueadero. 4 Candados;Unidad;869553.86 
+436;Sum Soportes Extintor 10 Lb Con Señalization ;Unidad;50166.57 
+437;Sum Escalera Dielectrica De 12 Pasos;Unidad;1053497.95 
+438;Reparación Cerradura De Pico De Loro (Incluye Desmonte. Lubricación Y Ajuste De Tornilleria);Unidad;75807.26 
+439;Sum E Inst Lamina En Acero Inoxidable;Unidad;89185.01 
+440;Sum E Inst Perfil En Aluminio;Metro Lineal;100333.14 
+441;Sum E Inst Guaya 2Mm Para Retroiluminado;Unidad;5016.66 
+442;Sum E Inst Tapa Para Perfil En Aluminio;Unidad;66888.76 
+443;Sum E Inst Señalización Prohibido Parquear De 60  X 60;Unidad;94759.07 
+444;Sum Extintor  Solkaflan De 3700 Gr ;Unidad;245258.78 
+445;Ajuste Y Lubricacion Ventilador;Unidad;50166.57 
+446;Sum Soportes Extintor 10 Lb Con Señalizacion ;Unidad;50166.57 
+447;Sum E Inst Platina En Aluminio Pintada Y Remachada Tamaño 5X49 Largo;Unidad;100333.14 
+448;Señalizacion De Discapacitados Con Pintura Epoxica  Blanca Y Azul;Unidad;479369.44 
+449;Sum E Inst Aviso En Acrilico Area Restringida;Unidad;35674.00 
+450;Ajuste De Carcaza Diebold Con Remaches;Unidad;156073.77 
+451;Señalizacion Prohibido  Parquear Con Pintura Epoxica  Blanca . Amarillo Y Rojo;Unidad;590850.70 
+452;Soldadura Marco Puerta Metalica Con Anclaje Al Piso;Unidad;200666.28 
+453;Sum E Inst Cantonera  Anclada Al Marco De La Puerta Con Cambio De Tornilleria;Unidad;50166.57 
+454;Sum E Inst Panel Rejilla Calibre 16 Pintado (Incluye Adecuacion Panel);Unidad;390184.43 
+455;Sum E Inst Perfileria En Aluminio Para Marco De Pasatulas;Unidad;323295.67 
+456;Restauracion Perfileria En Aluminio Para Marco De Pasatulas;Unidad;100333.14 
+457;Sum Extintor  Solkaflan De 20 Lb ;Unidad;434776.93 
+458;Sum Soportes Extintor 20 Lb Con Señalization ;Unidad;83610.95 
+459;Sum Escalera Metalica 5 Pasos ;Unidad;331099.36 
+460;Sum E Instalacion 6 Mts De Cadena Plastica Soldada A Las Argollas De Los Postes;Unidad;18951.81 
+461;Sum E Instalacion De Cerradura Yale De Seguridad 174 Plus;Unidad;217388.47 
+462;Sum Escalera De 10 Pasos Metalica Tipo Tijera;Unidad;724628.22 
+463;Sum E Inst Extractor Industrial  De Aire  12´  Siemen 220V;Unidad;880701.99 
+464;Desmonte Y Reistalacion De Zocalo (No Incluye Desmonte Ni Reinstalación De Puerta);Unidad;52674.90 
+465;Ajuste Con Chazos Expansivos Y Manteminiemto De Extractor De 6 ´;Unidad;61314.70 
+466;Sum E Inst Tuberia Emt 1/2 (Con Accesorios);Metro Lineal;17279.60 
+467;Sum E Inst Tuberia Emt 3/4 (Con Accesorios);Metro Lineal;20233.85 
+468;Sum E Inst Conduleta 5800;Unidad;10033.31 
+469;Sum E Inst Conduleta 10 X10;Unidad;14492.56 
+470;Sum E Inst Lámpara Led Recargable Portatil;Unidad;178370.02 
+471;Bisagra Puerta Site Supervisor Galvanizada;Unidad;25016.40 
+472;Caja Mt 5800 103 X 60 X 45;Unidad;31638.38 
+473;Lampara Panel Led 20 X 20;Unidad;26978.47 
+474;Mantenimiento Preventivo De Ups Hasta  3 Kva;Unidad;289851.29 
+475;Instalacion De Ups Hasta  3 Kva;Unidad;222962.53 
+476;Alquiler De Ups Hasta  3 Kva Un Mes;Unidad;668887.59 
+477;Desconexion . Traslado Y Conexión De Ups Hasta  3 Kva;Unidad;668887.59 
+478;Correctivo Ups Hasta  3 Kva;Unidad;289851.29 
+479;Cielo Raso Fibra Minera 60 X 60;Unidad;20847.00 
+480;Sum E Inst De Muro En Superboard A Dos Caras;Metro Cuadrado (m2);183944.09 
+481;Sum E Inst De Muro En Superboard A Dos Caras;Metro Lineal;172795.96 
+482;Sum E Inst De Muro En Superboard A Una Cara;Metro Cuadrado (m2);124859.02 
+483;Sum E Inst De Muro En Superboard A Una Cara;Metro Lineal;100333.14 
+484;Retiro De Vidrios (Puerta);Unidad;98103.51 
+485;Visita Tecnica Atm No Asignado (Bogota);Unidad;75523.62 
+486;Visita Tecnica Atm No Asignado (Ciudad Principal Barranquilla. Bucaramanga. Medellin Y Cali);Unidad;132166.32 
+487;Visita Tecnica Atm No Asignado (Ciudad Alterna Hasta 3 Horas De La Ciudad Principal);Unidad;220277.20 
+488;Visita Tecnica Atm No Asignado (Ciudad Alterna Despues De 3 Horas De La Ciudad Principal);Unidad;295800.82 
+489;Panel Led Redondo De Incrustar 24 W;Unidad;51504.34 
+490;Panel Led Cuadrado 30 X 30;Unidad;61314.70 
+491;Panel Led Cuadrado 20 X 20;Unidad;41693.99 
+492;Cinta Adhesiva Plateada;Unidad;35022.95 
+493;Rejilla Plastica De Ventilacion;Unidad;12753.46 
+494;Envíos de distribución de papel ;Según Cotización ; Según Cotización  
+495;Suministro de tablón para marchas de orden público;Unidad;237472.55 
+496;Instalación tablón para marchas de orden público ;Unidad;113285.91 
+542;SERVICIOS POR DEMANDA-VISITA CIUDAD PRINCIPAL;Unidad;37485.29 
+543;SERVICIOS POR DEMANDA-VISITA CIUDAD ALTERNA;Unidad;48195.38 
+544;SERVICIOS POR DEMANDA-VALOR MANO DE OBRA POR EMERGENCIAS (ATENCIÓN EN MENOS DE 4 HORAS);Unidad;90607.31 
+545;SERVICIOS POR DEMANDA-REVISIÓN ELECTRICA;Unidad;54325.83 
+546;SERVICIOS POR DEMANDA-PUESTA A PUNTO POR CAJERO (EN UN PULL DE CAJEROS ESTE APLICA PARA CADA CAJERO) LA PUESTA A PUNTO INCLUYE: PINTURA MUROS. PINTURA CIELO RASO. PINTURA FASCIA. ARREGLO DE PUERTA. REVISIÓN CERRADURAS;Unidad;481287.61 
+547;SERVICIOS POR DEMANDA-ARREGLO PUERTA CAIDA INCLUYE AJUSTE. NIVELACIÓN (NIVELACIÓN PUERTA CAIDA + GRADUACIÓN BISAGRA HIDRAULICA);Unidad;114638.59 
+548;SERVICIOS POR DEMANDA-DESMONTE Y REINSTALACION DE PUERTA PARA REPARACION DEL BLOQUE. PIVOTE.EMPAQUES Y CAMBIO DE BISAGRAS ;Unidad;160651.26 
+549;SERVICIOS POR DEMANDA-INSTALACIÓN PUBLICIDAD;Unidad;48195.38 
+550;SERVICIOS POR DEMANDA-RETIRO DE PAPELERA Y PUBLICIDAD;Unidad;69615.55 
+551;SERVICIOS POR DEMANDA-DESINSTALACION PROTECTOR DE TECLADO;Unidad;37485.29 
+552;SERVICIOS POR DEMANDA-INSTALACIÓN PROTECTOR DE TECLADO;Unidad;48195.38 
+553;SERVICIOS POR DEMANDA-LIMPIEZA GENERAL SITE SUPERVISOR. LIMPIEZA DE MAQUINAS PAREDES Y EQUIPOS;Unidad;54417.05 
+554;SERVICIOS POR DEMANDA-LIMPIEZA GENERAL SITE CLIENTE. LIMPIEZA DE MAQUINAS PAREDES PISOS Y EQUIPOS;Unidad;44982.35 
+555;SERVICIOS POR DEMANDA-LIMPIEZA LECTORA CON KIT DE LIMPIEZA;Unidad;26775.21 
+556;SERVICIOS POR DEMANDA-APERTURA O CIERRE CAJERO (TIEMPO DE ATENCIÓN 4 HORAS) SI REQUIERE EN MENOR TIEMPO ADICIONAL SE GENERA COBRO POR MANO DE OBRA POR EMERGENCIAS;Unidad;69615.55 
+557;SERVICIOS POR DEMANDA-SUM E INST BISAGRA HIDRAULICA SPEEDY;Unidad;728285.71 
+558;SERVICIOS POR DEMANDA-SUM E INST BLOQUE;Unidad;128521.01 
+559;SERVICIOS POR DEMANDA-GASTOSDE VIAJE DE ACUERDO CON ANEXO 1;Unidad; Según Anexo 
+561;FABRICACIÓN E INSTALCIÓN DE PUERTA DE VIDRIO;Unidad; Según Cotización  
+562;TARIFA TRANSPORTE SITIOS CON RESTRICCIÓN;DIA;2491.20 
+563;AMARRE PLASTICO DE 4' BLANCO X 100 UNIDADES;Paquete;15000.00 
+564;BASE ADHESIVA DE 25 X 25 MM BLANCA;Paquete;2100.00 
+565;SERVICIOS X DEMANADA - DESINTALACION PUBLICIDAD;Unidad;48195.38 

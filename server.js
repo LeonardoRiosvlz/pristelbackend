@@ -48,6 +48,7 @@ require("./app/routes/gestion_ath.routes")(app);
 require("./app/routes/notas.routes")(app); 
 require("./app/routes/calendario.routes")(app); 
 require("./app/routes/legalizaciones_ath.routes")(app); 
+require("./app/routes/sac.routes")(app); 
 // Cajeros
 
 require("./app/routes/cajeros_ath.routes")(app);
@@ -57,7 +58,7 @@ require("./app/routes/cajeros_ath.routes")(app);
 require("./app/routes/programacion_ath.routes")(app);
 //  fin Programacion 
 // set port, listen for requests
-
+global.__basedir = __dirname + "/..";
  
 // Middleware para Vue.js router modo history
 const history = require('connect-history-api-fallback');

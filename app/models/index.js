@@ -52,6 +52,7 @@ db.regional = require("./regional.model.js")(sequelize, Sequelize, DataTypes);
 db.ciudad = require("./ciudades.model.js")(sequelize, Sequelize, DataTypes); 
 db.seguridad = require("./seguridad.model.js")(sequelize, Sequelize, DataTypes); 
 db.trazabilidad_ath = require("./trazabilidad_ath.model.js")(sequelize, Sequelize, DataTypes); 
+db.sac = require("./sac.model.js")(sequelize, Sequelize, DataTypes);  
 
 
 

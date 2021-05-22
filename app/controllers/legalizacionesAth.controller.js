@@ -185,6 +185,18 @@ exports.update = async (req, res) => {
         res.send({
           message: "editado satisfactoriamente."
         });
+
+        const datos = {
+          titulo: `Legalización corregida     `,
+          descripcion: `Se corrigió una legalización para el consecutivo (ATH-${req.body.id_programacion})`,
+          origen: "",
+          modulo: "legalizaciones",
+          icon: "ri-exchange-dollar-fill",
+          color: "avatar-title bg-success rounded-circle font-size-16",
+          uid: req.body.coordinador_id,
+          canal: "",
+        };
+        CrearNotificacion(datos);
       } else {
         res.send({
           message: `No puede editar el coargo con el  el =${id}. Tal vez el cargo no existe o la peticion es vacia!`

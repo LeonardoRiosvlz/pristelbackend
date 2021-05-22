@@ -13,7 +13,7 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
           type: DataTypes.STRING
         },
         consecutivo: {
-            type: DataTypes.STRING(5)
+            type: DataTypes.STRING(25)
           },
         created_at: {
           allowNull: false,
