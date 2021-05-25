@@ -4,6 +4,8 @@ const Cajero = db.cajero_ath;
 const Entidad = db.entidad;
 const User = db.user;
 const Ciudad = db.ciudad;
+const Gestion = db.gestionAth;
+const Sac = db.sacAth;
 const Notificacion = db.notificacion;
 const Legalizaciones = db.legalizacionAth;
 const Op = db.Op;
@@ -51,7 +53,7 @@ exports.create = (req, res) => {
 
 exports.findAll = async (req, res) => {
 
-await  ProgramacionAth.findAndCountAll({
+await ProgramacionAth.findAndCountAll({
     limit: 3000000,
     offset: 0,
     where: {}, // conditions
@@ -68,6 +70,9 @@ await  ProgramacionAth.findAndCountAll({
     }, 
     {
       model: Legalizaciones,
+    },
+    {
+      model: Gestion,
     },
     {
       model: Cajero,
@@ -112,6 +117,12 @@ exports.find = async (req, res) => {
       }, 
       {
         model: Legalizaciones,
+      },
+      {
+        model: Gestion,
+      },
+      {
+        model: Sac,
       },
       {
         model: Cajero,

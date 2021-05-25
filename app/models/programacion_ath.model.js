@@ -72,6 +72,13 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
             defaultValue: 'Creada',
             unique: false
         }, 
+        aplica_sac: {
+          type: DataTypes.ENUM('','Aplica','No aplica'),
+          unique: false
+        },
+        total_tecnico: {
+          type: DataTypes.STRING(20)
+         },
         fecha_vencimiento: {
             allowNull: true,
             type: DataTypes.DATE

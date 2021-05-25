@@ -53,7 +53,7 @@ db.ciudad = require("./ciudades.model.js")(sequelize, Sequelize, DataTypes);
 db.seguridad = require("./seguridad.model.js")(sequelize, Sequelize, DataTypes); 
 db.trazabilidad_ath = require("./trazabilidad_ath.model.js")(sequelize, Sequelize, DataTypes); 
 db.sac = require("./sac.model.js")(sequelize, Sequelize, DataTypes);  
-
+db.sacAth = require("./sacAth.model.js")(sequelize, Sequelize, DataTypes);
 
 
 db.user.hasMany(db.permiso, { foreignKey: 'uid' });
@@ -116,6 +116,8 @@ db.programacion_ath.hasMany(db.gestionAth, { foreignKey: 'id_programacion' });
 db.gestionAth.belongsTo(db.programacion_ath, { foreignKey: 'id_programacion' }); 
 db.programacion_ath.hasMany(db.legalizacionAth, { foreignKey: 'id_programacion' }); 
 db.legalizacionAth.belongsTo(db.programacion_ath, { foreignKey: 'id_programacion' }); 
+db.programacion_ath.hasMany(db.sacAth, { foreignKey: 'id_programacion' }); 
+db.sacAth.belongsTo(db.programacion_ath, { foreignKey: 'id_programacion' }); 
 //fin programcion //
 db.permiso.belongsTo(db.user, { foreignKey: 'uid' });
 db.permiso.belongsTo(db.entidad, { foreignKey: 'eid' });
