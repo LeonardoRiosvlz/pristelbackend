@@ -70,7 +70,7 @@ exports.create = async (req, res) => {
 
 exports.findAll = (req, res) => {
 
-  Cargo.findAndCountAll({
+  Sac.findAndCountAll({
     limit: 3000000,
     offset: 0,
     where: {}, // conditions

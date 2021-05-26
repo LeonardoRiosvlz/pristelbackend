@@ -9,7 +9,7 @@ const sequelize = new Sequelize(
   {
     host: config.db.DB_HOST,
     dialect: config.db.dialect,
-    operatorsAliases: false,
+    operatorsAliases: 0,
     timezone: '-04:00',
     poll: {
       max: config.db.pool.max,
