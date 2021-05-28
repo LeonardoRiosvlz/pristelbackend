@@ -144,6 +144,30 @@ exports.find = async (req, res) => {
   };
   
 
+  exports.findPendientes = async (req, res) => {
+    await  ProgramacionAth.findAll({
+        limit: 3000000,
+        offset: 0,
+        where: {
+            tecnico_id:req.userId,
+            estado_pago:"Pendiente"
+            }, // conditions
+        order: [
+          ['id', 'DESC'],
+        ],
+        attributes:[ 'id','total_tecnico','estado_pago'],
+        include: [],
+      }) 
+        .then(data => {
+          res.send(data);
+        })
+        .catch(err => {
+          res.send(500).send({
+            message: err.message || "Ocurrio un erro al intentar acceder a este recursos."
+          });
+        });
+    };
+
 
 // Find a single with an id
 exports.findOne = (req, res) => {

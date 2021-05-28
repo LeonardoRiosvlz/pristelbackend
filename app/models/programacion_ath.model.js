@@ -47,6 +47,10 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
         margen: {
           type: DataTypes.STRING(20)
         },
+        estado_pago: {
+          type: DataTypes.ENUM('No aplica','Pendiente','Listado',),
+          unique: false
+        },
         motivo_escalado: {
           type: DataTypes.STRING
         },

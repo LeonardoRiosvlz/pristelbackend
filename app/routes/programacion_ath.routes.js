@@ -32,7 +32,10 @@ module.exports = app => {
 
     // Retrieve all cargos
     router.get("/", programacionAthController.findAll);
-  
+
+    // Retrieve all cargos
+    router.get("/pendientes",[cpUpload,authJwt.verifyToken], programacionAthController.findPendientes);
+
     // Update  with id
     router.put("/",[cpUpload,authJwt.verifyToken], programacionAthController.update);
 

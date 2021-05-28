@@ -24,39 +24,39 @@ db.sequelize.sync().then(() => {
 
 // api routes
 app.use('/public',express.static(`${__dirname}/app/storage/imgs`));
-require("./app/routes/book.routes")(app);
-require("./app/routes/auth.routes")(app);
-require("./app/routes/user.routes")(app);
-require("./app/routes/cargo.routes")(app);
-require("./app/routes/area.routes")(app);
-require("./app/routes/terceros.routes")(app);
-require("./app/routes/categoria.routes")(app);
-require("./app/routes/subcategoria.routes")(app);
-require("./app/routes/entidades.routes")(app);
-require("./app/routes/permisos.routes")(app);
-require("./app/routes/notificacion.routes")(app);
-require("./app/routes/formato.routes")(app);
-require("./app/routes/chat.routes")(app);
-require("./app/routes/imputaciones.routes")(app);
-require("./app/routes/abonos.routes")(app);
-require("./app/routes/seguridad.routes")(app);
-require("./app/routes/regional.routes")(app);
-require("./app/routes/ciudades.routes")(app);
-require("./app/routes/trazabilidad_ath.routes")(app);
-require("./app/routes/album.routes")(app); 
-require("./app/routes/gestion_ath.routes")(app); 
-require("./app/routes/notas.routes")(app); 
-require("./app/routes/calendario.routes")(app); 
-require("./app/routes/legalizaciones_ath.routes")(app); 
-require("./app/routes/sac.routes")(app); 
-require("./app/routes/sac_ath.routes")(app); 
+//require("./app/routes/book.routes")(app);
+//require("./app/routes/auth.routes")(app);
+//require("./app/routes/user.routes")(app);
+//require("./app/routes/cargo.routes")(app);
+//require("./app/routes/area.routes")(app);
+//require("./app/routes/terceros.routes")(app);
+//require("./app/routes/categoria.routes")(app);
+//require("./app/routes/subcategoria.routes")(app);
+//require("./app/routes/entidades.routes")(app);
+//require("./app/routes/permisos.routes")(app);
+//require("./app/routes/notificacion.routes")(app);
+//require("./app/routes/formato.routes")(app);
+//require("./app/routes/chat.routes")(app);
+//require("./app/routes/imputaciones.routes")(app);
+//require("./app/routes/abonos.routes")(app);
+//require("./app/routes/seguridad.routes")(app);
+//require("./app/routes/regional.routes")(app);
+//require("./app/routes/ciudades.routes")(app);
+//require("./app/routes/trazabilidad_ath.routes")(app);
+//require("./app/routes/album.routes")(app); 
+//require("./app/routes/gestion_ath.routes")(app); 
+//require("./app/routes/notas.routes")(app); 
+//require("./app/routes/calendario.routes")(app); 
+//require("./app/routes/legalizaciones_ath.routes")(app); 
+//require("./app/routes/sac.routes")(app); 
+//require("./app/routes/sac_ath.routes")(app); 
 // Cajeros
 
-require("./app/routes/cajeros_ath.routes")(app);
+//require("./app/routes/cajeros_ath.routes")(app);
 // fin Cajeros
 // Programacion
 
-require("./app/routes/programacion_ath.routes")(app);
+//require("./app/routes/programacion_ath.routes")(app);
 //  fin Programacion 
 // set port, listen for requests
 global.__basedir = __dirname + "/..";
